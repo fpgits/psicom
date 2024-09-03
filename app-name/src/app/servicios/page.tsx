@@ -162,7 +162,7 @@ export default function ServiciosPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#EEAB73]" />
-                      <span>Acceso ilimitado a sesiones durante un mes</span>
+                      <span>Hasta 4 sesiones durante un mes</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#EEAB73]" />
@@ -199,7 +199,7 @@ export default function ServiciosPage() {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#F5A281]" />
-                      <span>Válido por 2 meses</span>
+                      <span>Mantén el ritmo con un enfoque dirigido</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -220,7 +220,7 @@ export default function ServiciosPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#C4DDF5]" />
-                      <span>Una sesión de terapia de 50 minutos</span>
+                      <span>Una sesión de terapia de 60 minutos</span>
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#C4DDF5]" />
