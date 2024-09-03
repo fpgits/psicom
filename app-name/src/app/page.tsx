@@ -160,10 +160,10 @@ export default function Component() {
                 </Dialog>
               </li>
               <li className="transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90">
-                <a href="#servicios" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Servicios</a>
+                <a href="/" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Servicios</a>
               </li>
               <li className="transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90">
-                <a href="#talleres" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Talleres</a>
+                <a href="/talleres" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Talleres</a>
               </li>
               <li className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
                 <Button className="bg-[#EEAB73] hover:bg-[#F5A281] text-white" onClick={handleAppointmentClick}>
