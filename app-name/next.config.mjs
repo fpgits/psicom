@@ -28,7 +28,6 @@ const nextConfig = {
       }
     ]
   },
-  // Other Next.js config options...
 }
 
 export default nextConfig
