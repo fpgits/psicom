@@ -88,7 +88,7 @@ const LoadingModal: React.FC<LoadingModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (!isLoading && isOpen) {
       const redirectTimer = setTimeout(() => {
-        window.location.href = 'http://wa.link/w18uvj'
+        window.location.href = 'https://wa.link/w18uvj'
       }, 1000)
 
       return () => clearTimeout(redirectTimer)
