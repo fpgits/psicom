@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google'
-import { headers } from 'next/headers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,12 +12,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const nonce = headers().get('x-nonce')
-
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {process.env.NODE_ENV === 'development' && (
+          <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-eval' 'unsafe-inline' *; style-src 'unsafe-inline' *;" />
+        )}
       </head>
       <body className={inter.className}>
         {children}
