@@ -97,7 +97,7 @@ export default function ServiciosPage() {
           <nav className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center space-x-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
               <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
-              <span className="font-bold text-sm md:text-xl text-[#78AAC3]">Tu Bienester Mental</span>
+              <span className="font-bold text-sm md:text-xl text-[#78AAC3]">Tu Bienestar Mental</span>
             </Link>
             <ul className="hidden md:flex items-center space-x-6">
               <li className="transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90">
