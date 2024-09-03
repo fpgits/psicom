@@ -315,8 +315,8 @@ export default function Component() {
                 <img src="/placeholder.svg?height=400&width=400" alt="Albany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
               <div className="w-full md:w-1/2 md:pl-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Albany!</h2>
-                <p className="text-gray-600 mb-4">Soy Psicóloga Clínica y fundadora de Trabajando Tu Mente. Con formación en psicoterapia humanista integrativa, terapia de aceptación y compromiso (ACT) y terapia de pareja, estoy aquí para ayudarte en tu camino hacia el bienestar emocional.</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
+                <p className="text-gray-600 mb-4">Soy Psicóloga Clínica y fundadora de Trabajando Tu Bienestar Mental. Con formación en psicoterapia humanista integrativa, terapia de aceptación y compromiso (ACT) y terapia de pareja, estoy aquí para ayudarte en tu camino hacia el bienestar emocional.</p>
                 <p className="text-gray-600 mb-6">Mi enfoque se centra en brindar atención psicológica a adolescentes, adultos y parejas, siempre desde la empatía y la objetividad. Mi objetivo es que te sientas cómoda y confiada durante todo el proceso terapéutico.</p>
                 <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
                   <Button variant="outline" className="w-full md:w-auto border-[#78AAC3] text-[#78AAC3] hover:bg-[#C4DDF5]">
