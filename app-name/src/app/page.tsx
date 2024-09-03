@@ -234,13 +234,183 @@ export default function Component() {
           </section>
         </FadeInSection>
 
-        {/* Rest of the sections remain the same, just wrapped in FadeInSection components */}
-        {/* ... */}
+        <FadeInSection delay={0.2}>
+          <section className="mb-20" id="servicios">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Nuestros Servicios</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <Brain className="w-12 h-12 text-[#EEAB73] mb-4" />
+                    <h3 className="text-xl font-semibold">Mejora tu salud mental</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Prioriza tu bienestar mental para un mejor funcionamiento, resolución de problemas y disfrute del presente.</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <TrendingUp className="w-12 h-12 text-[#F5A281] mb-4" />
+                    <h3 className="text-xl font-semibold">Monitoreo personalizado</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Seguimiento semanal de tu progreso vía WhatsApp, asegurando una atención constante a tu proceso.</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <Calendar className="w-12 h-12 text-[#F3CD86] mb-4" />
+                    <h3 className="text-xl font-semibold">Horarios flexibles</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Terapia online adaptada a tu tiempo, ideal si no puedes asistir a sesiones presenciales.</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <Smile className="w-12 h-12 text-[#97C8D8] mb-4" />
+                    <h3 className="text-xl font-semibold">Terapia individual</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Sesiones personalizadas para abordar tus necesidades específicas y ayudarte a alcanzar tus metas personales.</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <Users className="w-12 h-12 text-[#78AAC3] mb-4" />
+                    <h3 className="text-xl font-semibold">Terapia de pareja</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Mejora tu relación con sesiones diseñadas para fortalecer la comunicación y resolver conflictos.</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
+                <Card>
+                  <CardHeader>
+                    <Book className="w-12 h-12 text-[#C4DDF5] mb-4" />
+                    <h3 className="text-xl font-semibold">Talleres y workshops</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Participa en sesiones grupales temáticas para desarrollar habilidades y compartir experiencias.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+        </FadeInSection>
 
+        <FadeInSection delay={0.4}>
+          <section className="mb-20">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0 transition-all duration-500 ease-in-out hover:scale-105">
+                <img src="/placeholder.svg?height=400&width=400" alt="Albany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
+              </div>
+              <div className="w-full md:w-1/2 md:pl-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Albany!</h2>
+                <p className="text-gray-600 mb-4">Soy Psicóloga Clínica y fundadora de Trabajando Tu Mente. Con formación en psicoterapia humanista integrativa, terapia de aceptación y compromiso (ACT) y terapia de pareja, estoy aquí para ayudarte en tu camino hacia el bienestar emocional.</p>
+                <p className="text-gray-600 mb-6">Mi enfoque se centra en brindar atención psicológica a adolescentes, adultos y parejas, siempre desde la empatía y la objetividad. Mi objetivo es que te sientas cómoda y confiada durante todo el proceso terapéutico.</p>
+                <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                  <Button variant="outline" className="w-full md:w-auto border-[#78AAC3] text-[#78AAC3] hover:bg-[#C4DDF5]">
+                    Conoce más sobre mí
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </FadeInSection>
+
+        <FadeInSection delay={0.6}>
+          <section className="mb-20" id="testimonios">
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <InstagramStory 
+                imageUrl="/placeholder.svg?height=400&width=300"
+                content="La terapia online me ayudó enormemente a trabajar en mis procesos personales y en mi crecimiento como ser humano. Ahora me siento más conectada con mi presente y feliz."
+              />
+              <InstagramStory 
+                imageUrl="/placeholder.svg?height=400&width=300"
+                content="Después de un año trabajando con Albany, me siento como una persona nueva. Aprendí la importancia del amor propio y cómo salir de una relación tóxica."
+              />
+              <InstagramStory 
+                imageUrl="/placeholder.svg?height=400&width=300"
+                content="Gracias a la terapia, aprendí a manejar mi ansiedad. Ahora duermo mejor, me concentro más fácilmente y me acepto tal como soy. Ha sido un cambio transformador."
+              />
+            </div>
+          </section>
+        </FadeInSection>
+
+        <FadeInSection delay={0.8}>
+          <section className="mb-20" id="mindful">
+            <div className="bg-[#C4DDF5] rounded-lg p-8 flex flex-col md:flex-row items-center justify-between transition-all duration-500 ease-in-out hover:scale-102">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-4">Mindful</h2>
+                <p className="text-gray-600 mb-6">¡Descubre nuestra nueva experiencia de bienestar emocional!</p>
+                <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="w-full md:w-auto bg-[#EEAB73] hover:bg-[#F5A281] text-white font-bold py-2 px-4 rounded">
+                        Próximamente
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>¡Próximamente!</DialogTitle>
+                        <DialogDescription>
+                          Estamos trabajando en algo emocionante. ¡Mantente atento para más novedades!
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 flex justify-center">
+                <img src="/placeholder.svg?height=300&width=300" alt="Mindful illustration" className="w-full max-w-md h-auto rounded-lg shadow-lg" />
+              </div>
+            </div>
+          </section>
+        </FadeInSection>
+
+        <FadeInSection delay={1}>
+          <section className="mb-20">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¿Listo para comenzar tu viaje hacia el bienestar emocional?</h2>
+              <p className="text-lg text-gray-600 mb-8">No esperes más para dar el primer paso hacia una vida más plena y satisfactoria.</p>
+              <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                <Button className="bg-[#EEAB73] hover:bg-[#F5A281] text-white text-lg px-8 py-3" onClick={handleAppointmentClick}>
+                  Agenda tu cita ahora
+                </Button>
+              </div>
+            </div>
+          </section>
+        </FadeInSection>
       </main>
 
       <footer className="bg-[#78AAC3] text-white py-8">
-        {/* Footer content remains the same */}
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
+              <p className="text-sm">© 2024 Trabajando Tu Mente</p>
+            </div>
+            <nav className="flex flex-wrap justify-center md:justify-end gap-4">
+              <a href="#" className="text-sm hover:underline">Política de privacidad</a>
+              <a href="#" className="text-sm hover:underline">Términos de servicio</a>
+              <a href="#" className="text-sm hover:underline">Contacto</a>
+            </nav>
+          </div>
+          <div className="mt-6 text-center md:text-left">
+            <p className="text-sm">Contáctanos: <Phone className="inline-block w-4 h-4 mr-1" /> +1 234 567 890</p>
+          </div>
+        </div>
       </footer>
     </div>
   )
