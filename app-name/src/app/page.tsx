@@ -216,7 +216,7 @@ export default function Component() {
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-1/2 mb-8 md:mb-0">
                 <h1 className="text-3xl md:text-5xl font-bold text-[#78AAC3] mb-6 transition-all duration-500 ease-in-out">
-                  ¡Te ayudo a mejorar tu Bienestar Emocional!
+                  ¡Te ayudo a mejorar tu Bienestar Mental!
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 transition-all duration-500 ease-in-out">
                   Te acompaño en tus procesos para alcanzar una vida más plena y satisfactoria.
