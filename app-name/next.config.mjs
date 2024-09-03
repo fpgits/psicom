@@ -1,10 +1,7 @@
-import crypto from 'crypto'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   async headers() {
-    const nonce = crypto.randomBytes(16).toString('base64')
     return [
       {
         source: '/:path*',
@@ -13,7 +10,7 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-eval' 'nonce-${nonce}';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline';
               style-src 'self' 'unsafe-inline';
               img-src 'self' data: blob:;
               font-src 'self';
@@ -26,18 +23,12 @@ const nextConfig = {
               block-all-mixed-content;
               upgrade-insecure-requests;
             `.replace(/\s{2,}/g, ' ').trim()
-          },
-          {
-            key: 'x-nonce',
-            value: nonce
           }
         ]
       }
     ]
   },
-  compiler: {
-    styledComponents: true,
-  },
+  // Other Next.js config options...
 }
 
 export default nextConfig
