@@ -213,7 +213,7 @@ export default function ServiciosPage() {
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
               <Card className="flex flex-col h-full">
                 <CardHeader>
-                  <h3 className="text-xl font-semibold text-center">Sesión individual</h3>
+                  <h3 className="text-xl font-semibold text-center">Sesión individual - Online y Presencial</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$30</p>
