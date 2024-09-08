@@ -96,7 +96,7 @@ export default function ServiciosPage() {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center space-x-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
+              <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
               <span className="font-bold text-sm md:text-xl text-[#78AAC3]">Tu Bienestar Mental</span>
             </Link>
             <ul className="hidden md:flex items-center space-x-6">
@@ -158,7 +158,7 @@ export default function ServiciosPage() {
                   <h3 className="text-xl font-semibold text-center">Plan Mensual</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$100</p>
+                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$85</p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#EEAB73]" />
@@ -187,7 +187,7 @@ export default function ServiciosPage() {
                   <h3 className="text-xl font-semibold text-center">Paquete de 3 sesiones</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$75</p>
+                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$60</p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#F5A281]" />
@@ -259,7 +259,7 @@ export default function ServiciosPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
+              <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
               <p className="text-sm">© 2024 Trabajando Tu Mente</p>
             </div>
             <nav className="flex flex-wrap justify-center md:justify-end gap-4">
