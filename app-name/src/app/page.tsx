@@ -337,12 +337,12 @@ export default function Component() {
               </div>
               <div className="w-full md:w-1/2 md:pl-12">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
-                <p className="text-gray-600 mb-4">Soy Psicóloga Clínica y fundadora de Trabajando Tu Bienestar Mental. Con formación en psicoterapia humanista integrativa, terapia de aceptación y compromiso (ACT) y terapia de pareja, estoy aquí para ayudarte en tu camino hacia el bienestar emocional.</p>
-                <p className="text-gray-600 mb-6">Mi enfoque se centra en brindar atención psicológica a adolescentes, adultos y parejas, siempre desde la empatía y la objetividad. Mi objetivo es que te sientas cómoda y confiada durante todo el proceso terapéutico.</p>
+                <p className="text-gray-600 mb-4">Soy Mariany Rodríguez, psicóloga clínica con 5 años de experiencia y fundadora de esta plataforma dedicada a tu salud mental. Ofrezco atención especializada a niños, adolescentes y adultos, tanto de manera presencial como online.
+                Mi especialización abarca el tratamiento de TDAH, autismo, ansiedad, depresión y otros trastornos del estado de ánimo. Además, brindo apoyo integral para cualquier otra necesidad que puedas tener, incluyendo asesoría a padres para el bienestar y desarrollo de sus hijos.</p>
+                <p className="text-gray-600 mb-6">Mi enfoque terapéutico se basa en la terapia cognitivo-conductual, una metodología eficaz que se centra en modificar los pensamientos para cambiar la conducta. Estoy comprometida a proporcionar un espacio seguro y de apoyo, donde puedas trabajar en alcanzar tu bienestar mental.</p>
+                <p className="text-gray-600 mb-6">Contáctame hoy mismo para agendar tu primera consulta y comenzar tu camino hacia el bienestar.</p>
                 <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-                  <Button variant="outline" className="w-full md:w-auto border-[#78AAC3] text-[#78AAC3] hover:bg-[#C4DDF5]">
-                    Conoce más sobre mí
-                  </Button>
+                 
                 </div>
               </div>
             </div>
