@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Menu, Heart, MessageCircle, Bookmark, ChevronRight, Brain, TrendingUp, Calendar, Smile, Users, Book, Phone, CheckCircle } from 'lucide-react'
+import { Menu, Heart, MessageCircle, Bookmark, ChevronRight, Brain, TrendingUp, Calendar, Smile, Users, Book, Phone, CheckCircle, Star } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -18,34 +18,55 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-interface InstagramStoryProps {
+interface TestimonialProps {
+  username: string;
+  date: string;
+  rating: number;
+  comment: string;
   imageUrl: string;
-  content: string;
 }
 
-const InstagramStory: React.FC<InstagramStoryProps> = ({ imageUrl, content }) => (
-  <div className="transition-all duration-500 ease-in-out opacity-0 translate-y-5 animate-fade-in-up">
-    <Card>
-      <CardContent className="pt-6">
-        <img src={imageUrl} alt="Story content" className="w-full h-48 object-cover rounded-md mb-4" />
-        <p className="text-sm">{content}</p>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <div className="flex space-x-2">
-          <Button variant="ghost" size="icon">
-            <Heart className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <MessageCircle className="h-4 w-4" />
-          </Button>
+const Testimonial: React.FC<TestimonialProps> = ({ username, date, rating, comment, imageUrl }) => (
+  <Card className="overflow-hidden">
+    <CardHeader className="p-4">
+      <div className="flex items-center space-x-4">
+        <Avatar>
+          <AvatarImage src={`https://api.dicebear.com/6.x/initials/svg?seed=${username}`} />
+          <AvatarFallback>{username.charAt(0)}</AvatarFallback>
+        </Avatar>
+        <div>
+          <p className="text-sm font-semibold">{username}</p>
+          <p className="text-xs text-gray-500">{date}</p>
         </div>
+      </div>
+    </CardHeader>
+    <CardContent className="p-4 pt-0">
+      <div className="flex mb-2">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+        ))}
+      </div>
+      <p className="text-sm">{comment}</p>
+    </CardContent>
+    <CardFooter className="p-0">
+      <img src={imageUrl} alt="Testimonial" className="w-full h-48 object-cover" />
+    </CardFooter>
+    <CardFooter className="flex justify-between p-4">
+      <div className="flex space-x-2">
         <Button variant="ghost" size="icon">
-          <Bookmark className="h-4 w-4" />
+          <Heart className="h-4 w-4" />
         </Button>
-      </CardFooter>
-    </Card>
-  </div>
+        <Button variant="ghost" size="icon">
+          <MessageCircle className="h-4 w-4" />
+        </Button>
+      </div>
+      <Button variant="ghost" size="icon">
+        <Bookmark className="h-4 w-4" />
+      </Button>
+    </CardFooter>
+  </Card>
 )
 
 interface FadeInSectionProps {
@@ -140,7 +161,7 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logomariany-Rp7HqXGTljtFbxh8HDvxA9pOvdMy1V.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
               <span className="font-bold text-sm md:text-xl text-[#78AAC3]">Tu Bienestar Mental</span>
             </div>
             <ul className="hidden md:flex items-center space-x-6">
@@ -228,7 +249,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
-                <img src="/placeholder.svg?height=400&width=400" alt="Psicóloga sonriente" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/foto1-CDAaVcH7BY9Uornbm9JqkucMLSNeuv.jpg" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
             </div>
           </section>
@@ -312,7 +333,7 @@ export default function Component() {
           <section className="mb-20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-1/2 mb-8 md:mb-0 transition-all duration-500 ease-in-out hover:scale-105">
-                <img src="/placeholder.svg?height=400&width=400" alt="Albany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/foto2-GM5yRav811WTlibsPirS8gWfEQZ3ty.jpg" alt="Mariany sonriendo" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
               <div className="w-full md:w-1/2 md:pl-12">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
@@ -332,17 +353,26 @@ export default function Component() {
           <section className="mb-20" id="testimonios">
             <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <InstagramStory 
-                imageUrl="/placeholder.svg?height=400&width=300"
-                content="La terapia online me ayudó enormemente a trabajar en mis procesos personales y en mi crecimiento como ser humano. Ahora me siento más conectada con mi presente y feliz."
+              <Testimonial 
+                username="Michelle Walters"
+                date="NOVEMBER 3, 2017"
+                rating={5}
+                comment="I've searched for shoes like these, like, forever!!! Sooooo happy I found them! This great store has a fantastic choice, I'll be coming back again and again! #dreamshoes #lovely #coolstyle"
+                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial1-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
               />
-              <InstagramStory 
-                imageUrl="/placeholder.svg?height=400&width=300"
-                content="Después de un año trabajando con Albany, me siento como una persona nueva. Aprendí la importancia del amor propio y cómo salir de una relación tóxica."
+              <Testimonial 
+                username="KC Robbins"
+                date="NOVEMBER 5, 2017"
+                rating={4}
+                comment="Hey, all sweet food lovers! Check out this great donut place – they bake their donuts right there, and they are fresh and soooo yummy! #amysdoughnuts #homersimpson #meltinthemouth"
+                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial2-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
               />
-              <InstagramStory 
-                imageUrl="/placeholder.svg?height=400&width=300"
-                content="Gracias a la terapia, aprendí a manejar mi ansiedad. Ahora duermo mejor, me concentro más fácilmente y me acepto tal como soy. Ha sido un cambio transformador."
+              <Testimonial 
+                username="James Elf"
+                date="NOVEMBER 9, 2017"
+                rating={5}
+                comment="I hate hats, but since I've moved to Toronto, I really have to wear one in winter. I used to think all hats made me look funny, but this one's an exception. And it's stylish, too! #canadianstyle..."
+                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial3-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
               />
             </div>
           </section>
@@ -398,7 +428,7 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logomariany-Rp7HqXGTljtFbxh8HDvxA9pOvdMy1V.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
               <p className="text-sm">© 2024 Trabajando Tu Mente</p>
             </div>
             <nav className="flex flex-wrap justify-center md:justify-end gap-4">
