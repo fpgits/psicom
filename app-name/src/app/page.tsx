@@ -161,7 +161,7 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logomariany-Rp7HqXGTljtFbxh8HDvxA9pOvdMy1V.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
+              <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
               <span className="font-bold text-sm md:text-xl text-[#78AAC3]">Tu Bienestar Mental</span>
             </div>
             <ul className="hidden md:flex items-center space-x-6">
@@ -249,7 +249,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
-                <img src="" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="/images/foto1.jpg" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
             </div>
           </section>
@@ -333,7 +333,7 @@ export default function Component() {
           <section className="mb-20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-1/2 mb-8 md:mb-0 transition-all duration-500 ease-in-out hover:scale-105">
-                <img src="./public/foto1.jpg" alt="Mariany sonriendo" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="/images/foto2.jpg" alt="Mariany sonriendo" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
               <div className="w-full md:w-1/2 md:pl-12">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
@@ -428,7 +428,7 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logomariany-Rp7HqXGTljtFbxh8HDvxA9pOvdMy1V.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
+              <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
               <p className="text-sm">© 2024 Trabajando Tu Mente</p>
             </div>
             <nav className="flex flex-wrap justify-center md:justify-end gap-4">
