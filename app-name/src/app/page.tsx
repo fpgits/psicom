@@ -249,7 +249,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/foto1-CDAaVcH7BY9Uornbm9JqkucMLSNeuv.jpg" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
             </div>
           </section>
@@ -333,7 +333,7 @@ export default function Component() {
           <section className="mb-20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-1/2 mb-8 md:mb-0 transition-all duration-500 ease-in-out hover:scale-105">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/foto2-GM5yRav811WTlibsPirS8gWfEQZ3ty.jpg" alt="Mariany sonriendo" className="rounded-lg shadow-lg w-full h-auto" />
+                <img src="/public/foto1.jpg" alt="Mariany sonriendo" className="rounded-lg shadow-lg w-full h-auto" />
               </div>
               <div className="w-full md:w-1/2 md:pl-12">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
