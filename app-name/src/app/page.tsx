@@ -45,7 +45,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ number, date, rating, comment
       <p className="text-sm mb-4">{comment}</p>
     </CardContent>
     <CardFooter className="p-0">
-      <img src={imageUrl} alt="Testimonio" className="w-full h-82 object-cover" />
+      <img src={imageUrl} alt="Testimonio" className="w-full h-52 object-cover" />
     </CardFooter>
   </Card>
 )
@@ -365,21 +365,21 @@ export default function Component() {
                 date="15 de mayo, 2023"
                 rating={5}
                 comment="Las sesiones online con Mariany han sido una bendición. Desde Maracaibo, he podido recibir ayuda profesional de calidad sin salir de casa. ¡Totalmente recomendada!"
-                imageUrl="/images/test1.jpeg"
+  
               />
               <Testimonial 
                 number={2}
                 date="3 de junio, 2023"
                 rating={5}
                 comment="Como caraqueño, encontrar un psicólogo de confianza era crucial. Mariany no solo es profesional, sino que también crea un ambiente cómodo y seguro. Ha sido de gran ayuda en mi proceso."
-                imageUrl="/images/test2.jpeg"
+          
               />
               <Testimonial 
                 number={3}
                 date="20 de julio, 2023"
                 rating={5}
                 comment="Desde Valencia, he estado tomando sesiones online con Mariany. Su enfoque y técnicas han sido fundamentales para manejar mi ansiedad. Gracias por hacer la terapia accesible en todo el país."
-                imageUrl="/images/test3.jpeg"
+          
               />
             </div>
           </section>
