@@ -93,7 +93,7 @@ const LoadingModal: React.FC<LoadingModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (!isLoading && isOpen) {
       const redirectTimer = setTimeout(() => {
-        router.push('http://wa.link/w18uvj')
+        router.push('https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n')
       }, 1000)
 
       return () => clearTimeout(redirectTimer)

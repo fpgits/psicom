@@ -83,7 +83,7 @@ export default function ServiciosPage() {
   }
 
   const handleRedirect = useCallback(() => {
-    window.location.href = 'https://wa.link/w18uvj'
+    window.location.href = 'https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n'
   }, [])
 
   const handleProximamenteClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
