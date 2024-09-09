@@ -89,7 +89,7 @@ export default function Component() {
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
-              <a href="#servicios" className="text-gray-600 hover:text-[#78AAC3]">Servicios</a>
+              <a href="/servicios" className="text-gray-600 hover:text-[#78AAC3]">Servicios</a>
               <Dialog>
                 <DialogTrigger asChild>
                   <a className="text-gray-600 hover:text-[#78AAC3] cursor-pointer">Talleres</a>
@@ -135,7 +135,7 @@ export default function Component() {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-            <a href="#servicios" className="block py-2 text-gray-600 hover:text-[#78AAC3]">Servicios</a>
+            <a href="/servicios" className="block py-2 text-gray-600 hover:text-[#78AAC3]">Servicios</a>
             <Dialog>
               <DialogTrigger asChild>
                 <a className="block py-2 text-gray-600 hover:text-[#78AAC3] cursor-pointer">Talleres</a>
@@ -239,6 +239,32 @@ export default function Component() {
           </div>
         </section>
 
+        <section id="about" className="mb-12">
+          <div className="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-xl overflow-hidden">
+            <div className="md:w-1/2">
+              <img src="/images/mariany.jpg" alt="Mariany Rodriguez, Psicóloga" className="w-full h-auto" />
+            </div>
+            <div className="md:w-1/2 p-8">
+              <h2 className="text-3xl font-bold text-[#78AAC3] mb-6">¡Hola, soy Mariany!</h2>
+              <p className="text-gray-700 mb-4">
+                Soy Mariany Rodriguez, psicóloga clínica con 5 años de experiencia y fundadora de esta plataforma dedicada a tu salud mental. Ofrezco atención especializada a niños, adolescentes y adultos, tanto de manera presencial como online.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Mi especialización abarca el tratamiento de TDAH, autismo, ansiedad, depresión y otros trastornos del estado de ánimo. Además, brindo apoyo integral para cualquier otra necesidad que puedas tener, incluyendo asesoría a padres para el bienestar y desarrollo de sus hijos.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Mi enfoque terapéutico se basa en la terapia cognitivo-conductual, una metodología eficaz que se centra en modificar los pensamientos para cambiar la conducta. Estoy comprometida a proporcionar un espacio seguro y de apoyo, donde puedas trabajar en alcanzar tu bienestar mental.
+              </p>
+              <p className="text-gray-700 mb-6">
+                Contáctame hoy mismo para agendar tu primera consulta y comenzar tu camino hacia el bienestar.
+              </p>
+              <Button className="bg-[#EEAB73] hover:bg-[#F5A281] text-white">
+                Agenda tu primera consulta
+              </Button>
+            </div>
+          </div>
+        </section>
+
         <section id="testimonios" className="mb-12">
           <h2 className="text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios de Pacientes en Venezuela</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -263,23 +289,6 @@ export default function Component() {
               comment="Desde Valencia, he estado tomando sesiones online con Mariany. Su enfoque y técnicas han sido fundamentales para manejar mi ansiedad. Gracias por hacer la terapia accesible en todo el país."
               imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial3-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
             />
-          </div>
-        </section>
-
-        <section id="about" className="mb-12">
-          <h2 className="text-2xl font-bold text-[#78AAC3] mb-6">Sobre Nosotros</h2>
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 md:pr-8">
-              <p className="text-lg text-gray-700 mb-4">
-                En Tu Bienestar Mental, nos dedicamos a proporcionar atención psicológica de calidad. Nuestro equipo de profesionales altamente calificados está comprometido con tu bienestar emocional y mental.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Ofrecemos un enfoque personalizado para cada cliente, utilizando técnicas probadas y actualizadas en el campo de la psicología.
-              </p>
-            </div>
-            <div className="md:w-1/2 mt-6 md:mt-0">
-              <img src="/images/foto2.jpg" alt="Equipo de psicólogos" className="rounded-lg shadow-xl w-full h-auto" />
-            </div>
           </div>
         </section>
 
