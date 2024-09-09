@@ -45,7 +45,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ number, date, rating, comment
       <p className="text-sm mb-4">{comment}</p>
     </CardContent>
     <CardFooter className="p-0">
-      <img src={imageUrl} alt="Testimonio" className="w-full h-48 object-cover" />
+      <img src={imageUrl} alt="Testimonio" className="w-full h-64 object-cover" />
     </CardFooter>
   </Card>
 )
