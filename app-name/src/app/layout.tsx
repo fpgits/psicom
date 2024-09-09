@@ -4,8 +4,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Your App Title',
-  description: 'Your app description',
+  title: 'Tu Bienestar Mental | Psicóloga Mariany Rodríguez en Venezuela',
+  description: 'Mejora tu salud mental con la psicóloga Mariany Rodríguez. Ofrecemos terapia online, individual y de pareja en Venezuela. Especialistas en TDAH, autismo, ansiedad y depresión.',
 }
 
 export default function RootLayout({
