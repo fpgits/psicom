@@ -162,7 +162,7 @@ export default function ServiciosPage() {
         <section className="mb-20">
           <h1 className="text-4xl md:text-5xl font-bold text-[#78AAC3] mb-6 text-center">Mis Servicios</h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 text-center">
-            Ofrecemos una variedad de planes diseñados para adaptarse a tus necesidades y presupuesto.
+            Ofrezco una variedad de planes diseñados para adaptarse a tus necesidades y presupuesto.
           </p>
         </section>
 
