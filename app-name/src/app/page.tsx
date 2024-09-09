@@ -365,21 +365,21 @@ export default function Component() {
                 date="15 de mayo, 2023"
                 rating={5}
                 comment="Las sesiones online con Mariany han sido una bendición. Desde Maracaibo, he podido recibir ayuda profesional de calidad sin salir de casa. ¡Totalmente recomendada!"
-                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial1-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
+                imageUrl="/images/test1.jpg"
               />
               <Testimonial 
                 number={2}
                 date="3 de junio, 2023"
                 rating={5}
                 comment="Como caraqueño, encontrar un psicólogo de confianza era crucial. Mariany no solo es profesional, sino que también crea un ambiente cómodo y seguro. Ha sido de gran ayuda en mi proceso."
-                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial2-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
+                imageUrl="/images/test2.jpg"
               />
               <Testimonial 
                 number={3}
                 date="20 de julio, 2023"
                 rating={5}
                 comment="Desde Valencia, he estado tomando sesiones online con Mariany. Su enfoque y técnicas han sido fundamentales para manejar mi ansiedad. Gracias por hacer la terapia accesible en todo el país."
-                imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial3-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
+                imageUrl="/images/test3.jpg"
               />
             </div>
           </section>
