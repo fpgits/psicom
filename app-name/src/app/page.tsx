@@ -410,7 +410,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 flex justify-center">
-                <img src="/images.mindful.jpg" alt="Mindful illustration" className="w-full max-w-md h-auto rounded-lg shadow-lg" />
+                <img src="/images/mindful.jpg" alt="Mindful illustration" className="w-full max-w-md h-auto rounded-lg shadow-lg" />
               </div>
             </div>
           </section>
