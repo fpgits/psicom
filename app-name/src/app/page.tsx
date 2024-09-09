@@ -358,7 +358,7 @@ export default function Component() {
 
         <FadeInSection delay={0.6}>
           <section className="mb-20" id="testimonios">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios de Pacientes en Venezuela</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios de Mis Pacientes en Venezuela</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Testimonial 
                 number={1}
@@ -410,7 +410,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 flex justify-center">
-                <img src="/placeholder.svg?height=300&width=300" alt="Mindful illustration" className="w-full max-w-md h-auto rounded-lg shadow-lg" />
+                <img src="/images.mindful.jpg" alt="Mindful illustration" className="w-full max-w-md h-auto rounded-lg shadow-lg" />
               </div>
             </div>
           </section>
