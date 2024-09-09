@@ -162,7 +162,7 @@ export default function Component() {
                 </Dialog>
               </li>
               <li className="transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90">
-                <a href="#servicios" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Servicios</a>
+                <a href="/servicios" className="text-gray-600 hover:text-[#78AAC3] transition-colors">Servicios</a>
               </li>
               <li className="transition-transform duration-300 ease-in-out hover:scale-110 active:scale-90">
                 <Dialog>
@@ -209,7 +209,7 @@ export default function Component() {
                       </DialogHeader>
                     </DialogContent>
                   </Dialog>
-                  <a href="#servicios" className="text-lg font-medium hover:text-[#78AAC3] transition-colors">Servicios</a>
+                  <a href="/servicios" className="text-lg font-medium hover:text-[#78AAC3] transition-colors">Servicios</a>
                   <Dialog>
                     <DialogTrigger asChild>
                       <a className="text-lg font-medium hover:text-[#78AAC3] transition-colors cursor-pointer">Talleres</a>
