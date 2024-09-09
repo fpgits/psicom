@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Brain, TrendingUp, Calendar, Smile, Users, Book, Menu, X, Star, Heart, MessageCircle, Bookmark } from 'lucide-react'
+import { Brain, TrendingUp, Calendar, Smile, Users, Book, Menu, X, Star } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -28,10 +28,9 @@ const Testimonial: React.FC<TestimonialProps> = ({ username, date, rating, comme
       <div className="flex items-center space-x-4">
         <Avatar>
           <AvatarImage src={`https://api.dicebear.com/6.x/initials/svg?seed=${username}`} />
-          <AvatarFallback>{username.charAt(0)}</AvatarFallback>
+          <AvatarFallback>{username}</AvatarFallback>
         </Avatar>
         <div>
-          <p className="text-sm font-semibold">{username}</p>
           <p className="text-xs text-gray-500">{date}</p>
         </div>
       </div>
@@ -46,19 +45,6 @@ const Testimonial: React.FC<TestimonialProps> = ({ username, date, rating, comme
     </CardContent>
     <CardFooter className="p-0">
       <img src={imageUrl} alt="Testimonio" className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
-    </CardFooter>
-    <CardFooter className="flex justify-between p-4">
-      <div className="flex space-x-2">
-        <Button variant="ghost" size="icon">
-          <Heart className="h-4 w-4" />
-        </Button>
-        <Button variant="ghost" size="icon">
-          <MessageCircle className="h-4 w-4" />
-        </Button>
-      </div>
-      <Button variant="ghost" size="icon">
-        <Bookmark className="h-4 w-4" />
-      </Button>
     </CardFooter>
   </Card>
 )
@@ -89,7 +75,7 @@ export default function Component() {
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
-              <a href="/servicios" className="text-gray-600 hover:text-[#78AAC3]">Servicios</a>
+              <a href="#servicios" className="text-gray-600 hover:text-[#78AAC3]">Servicios</a>
               <Dialog>
                 <DialogTrigger asChild>
                   <a className="text-gray-600 hover:text-[#78AAC3] cursor-pointer">Talleres</a>
@@ -135,7 +121,7 @@ export default function Component() {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-            <a href="/servicios" className="block py-2 text-gray-600 hover:text-[#78AAC3]">Servicios</a>
+            <a href="#servicios" className="block py-2 text-gray-600 hover:text-[#78AAC3]">Servicios</a>
             <Dialog>
               <DialogTrigger asChild>
                 <a className="block py-2 text-gray-600 hover:text-[#78AAC3] cursor-pointer">Talleres</a>
@@ -269,21 +255,21 @@ export default function Component() {
           <h2 className="text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios de Pacientes en Venezuela</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Testimonial 
-              username="María G."
+              username="1"
               date="15 de mayo, 2023"
               rating={5}
               comment="Las sesiones online con Mariany han sido una bendición. Desde Maracaibo, he podido recibir ayuda profesional de calidad sin salir de casa. ¡Totalmente recomendada!"
               imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial1-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
             />
             <Testimonial 
-              username="Carlos R."
+              username="2"
               date="3 de junio, 2023"
               rating={5}
               comment="Como caraqueño, encontrar un psicólogo de confianza era crucial. Mariany no solo es profesional, sino que también crea un ambiente cómodo y seguro. Ha sido de gran ayuda en mi proceso."
               imageUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/testimonial2-Hy5Ue9Ue5Ue9Ue5Ue9Ue5Ue9Ue5Ue9.jpg"
             />
             <Testimonial 
-              username="Ana V."
+              username="3"
               date="20 de julio, 2023"
               rating={5}
               comment="Desde Valencia, he estado tomando sesiones online con Mariany. Su enfoque y técnicas han sido fundamentales para manejar mi ansiedad. Gracias por hacer la terapia accesible en todo el país."
