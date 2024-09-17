@@ -452,11 +452,7 @@ export default function Component() {
               <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
               <p className="text-sm">© 2024 Trabajando Tu Mente</p>
             </div>
-            <nav className="flex flex-wrap justify-center md:justify-end gap-4">
-              <a href="#" className="text-sm hover:underline">Política de privacidad</a>
-              <a href="#" className="text-sm hover:underline">Términos de servicio</a>
-              <a href="#" className="text-sm hover:underline">Contacto</a>
-            </nav>
+           
           </div>
         </div>
       </footer>
