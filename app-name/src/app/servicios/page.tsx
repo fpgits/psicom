@@ -77,19 +77,19 @@ export default function ServiciosPage() {
   const [isProximamenteModalOpen, setIsProximamenteModalOpen] = useState(false)
   const router = useRouter()
 
-  const handleAppointmentClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleAppointmentClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setIsModalOpen(true)
-  }
+  }, [])
 
   const handleRedirect = useCallback(() => {
     window.location.href = 'https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n'
   }, [])
 
-  const handleProximamenteClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleProximamenteClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     setIsProximamenteModalOpen(true)
-  }
+  }, [])
 
   return (
     <div className="bg-gradient-to-b from-[#C4DDF5] to-white min-h-screen">
@@ -169,12 +169,18 @@ export default function ServiciosPage() {
         <section className="mb-20" id="servicios">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
-              <Card className="flex flex-col h-full">
+              <Card className="flex flex-col h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-[#EEAB73] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
+                  ¡Oferta!
+                </div>
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Plan Mensual</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$85</p>
+                  <div className="text-center mb-4">
+                    <span className="text-2xl font-bold line-through text-gray-400">$85</span>
+                    <p className="text-3xl font-bold text-[#78AAC3]">$65</p>
+                  </div>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#EEAB73]" />
@@ -198,12 +204,18 @@ export default function ServiciosPage() {
               </Card>
             </div>
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
-              <Card className="flex flex-col h-full">
+              <Card className="flex flex-col h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-[#F5A281] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
+                  ¡Descuento!
+                </div>
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Paquete de 3 sesiones</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$60</p>
+                  <div className="text-center mb-4">
+                    <span className="text-2xl font-bold line-through text-gray-400">$60</span>
+                    <p className="text-3xl font-bold text-[#78AAC3]">$50</p>
+                  </div>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#F5A281]" />
@@ -227,12 +239,18 @@ export default function ServiciosPage() {
               </Card>
             </div>
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
-              <Card className="flex flex-col h-full">
+              <Card className="flex flex-col h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-[#C4DDF5] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
+                  ¡Ahorra!
+                </div>
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Sesión individual - Online o Presencial</h3>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold text-center text-[#78AAC3] mb-4">$30</p>
+                  <div className="text-center mb-4">
+                    <span className="text-2xl font-bold line-through text-gray-400">$30</span>
+                    <p className="text-3xl font-bold text-[#78AAC3]">$20</p>
+                  </div>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-[#C4DDF5]" />
