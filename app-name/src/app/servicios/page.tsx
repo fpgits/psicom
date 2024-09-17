@@ -171,7 +171,7 @@ export default function ServiciosPage() {
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
               <Card className="flex flex-col h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-[#EEAB73] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
-                  ¡Oferta!
+                  Popular
                 </div>
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Plan Mensual</h3>
@@ -206,7 +206,7 @@ export default function ServiciosPage() {
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
               <Card className="flex flex-col h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-[#F5A281] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
-                  ¡Descuento!
+                  Popular
                 </div>
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Paquete de 3 sesiones</h3>
@@ -240,9 +240,7 @@ export default function ServiciosPage() {
             </div>
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
               <Card className="flex flex-col h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-[#C4DDF5] text-white px-4 py-1 rounded-bl-lg transform rotate-12 translate-x-4 -translate-y-2">
-                  ¡Ahorra!
-                </div>
+                
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Sesión individual - Online o Presencial</h3>
                 </CardHeader>
