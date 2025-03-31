@@ -292,7 +292,7 @@ export default function Component() {
 <FadeInSection delay={0.1}>
   <section className="mb-20 flex flex-col md:flex-row items-center justify-center gap-8">
     {/* Columna de la imagen (caricatura) */}
-    <div className="md:w-1/2 flex justify-center">
+    <div className="w-full md:w-[65%] flex justify-center">
       <a
         href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
         target="_blank"
@@ -301,27 +301,32 @@ export default function Component() {
         <img
           src="/images/mary.png"
           alt="Deja tu reseña"
-          className="w-full max-w-[400px] object-contain"
+          className="w-full object-contain"
         />
       </a>
     </div>
 
-    {/* Columna del texto */}
-    <div className="md:w-1/2 text-center md:text-left">
+    {/* Columna del texto con fondo blanco */}
+    <div className="w-full md:w-[35%] bg-white p-6 rounded-lg shadow-md text-center">
       <h3 className="text-xl font-semibold text-[#78AAC3] mb-4">
         ¡Tu reseña es importante!
       </h3>
-      <p className="text-gray-600">
-        Esto puede tomar 1 minuto de tu tiempo, pero podrá ayudar a miles de
-        personas a empezar sus procesos de bienestar mental. 
-        <br />
-        <span className="font-medium">
-          ¡Gracias por compartir tu experiencia!
-        </span>
+      <p className="text-gray-600 mb-6">
+        Esto puede tomar 1 minuto de tu tiempo, pero ayudará a miles de personas a iniciar su camino hacia el bienestar mental.
       </p>
+      <a
+        href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button className="bg-[#EEAB73] hover:bg-[#F5A281] text-white">
+          Deja tu reseña
+        </Button>
+      </a>
     </div>
   </section>
 </FadeInSection>
+
 
         <FadeInSection delay={0.2}>
           <section className="mb-20" id="servicios">
