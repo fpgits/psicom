@@ -257,40 +257,69 @@ export default function Component() {
       <FadeInSection>
   <section className="mb-20">
     <div className="flex flex-col md:flex-row items-center justify-between">
+      {/* Columna Izquierda */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <h1 className="text-3xl md:text-5xl font-bold text-[#78AAC3] mb-6 transition-all duration-500 ease-in-out">
           ¡Te ayudo a mejorar tu Bienestar Mental!
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 mb-8 transition-all duration-500 ease-in-out">
+        {/* Ajuste para no extender demasiado el párrafo en pantallas grandes */}
+        <p className="text-lg md:text-xl text-gray-600 mb-8 md:pr-8 transition-all duration-500 ease-in-out">
           Te acompaño en tus procesos para alcanzar una vida más plena y satisfactoria.
         </p>
         <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
-          <Button className="w-full md:w-auto bg-[#EEAB73] hover:bg-[#F5A281] text-white" onClick={handleAppointmentClick}>
+          <Button
+            className="w-full md:w-auto bg-[#EEAB73] hover:bg-[#F5A281] text-white"
+            onClick={handleAppointmentClick}
+          >
             Agenda tu cita <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
+
+      {/* Columna Derecha */}
       <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
-        <img src="/images/foto1.jpg" alt="Mariany trabajando" className="rounded-lg shadow-lg w-full h-auto" />
+        <img
+          src="/images/foto1.jpg"
+          alt="Mariany trabajando"
+          className="rounded-lg shadow-lg w-full h-auto"
+        />
       </div>
     </div>
   </section>
 </FadeInSection>
 
-{/* Nueva sección con la imagen clickable */}
+{/* Sección con la caricatura y el texto adicional */}
 <FadeInSection delay={0.1}>
-  <section className="mb-20 flex justify-center">
-    <a 
-      href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      <img 
-        src="/images/mary.png" 
-        alt="Deja tu reseña" 
-        className="w-full max-w-[800px] object-contain"
-      />
-    </a>
+  <section className="mb-20 flex flex-col md:flex-row items-center justify-center gap-8">
+    {/* Columna de la imagen (caricatura) */}
+    <div className="md:w-1/2 flex justify-center">
+      <a
+        href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/images/mary.png"
+          alt="Deja tu reseña"
+          className="w-full max-w-[400px] object-contain"
+        />
+      </a>
+    </div>
+
+    {/* Columna del texto */}
+    <div className="md:w-1/2 text-center md:text-left">
+      <h3 className="text-xl font-semibold text-[#78AAC3] mb-4">
+        ¡Tu reseña es importante!
+      </h3>
+      <p className="text-gray-600">
+        Esto puede tomar 1 minuto de tu tiempo, pero podrá ayudar a miles de
+        personas a empezar sus procesos de bienestar mental. 
+        <br />
+        <span className="font-medium">
+          ¡Gracias por compartir tu experiencia!
+        </span>
+      </p>
+    </div>
   </section>
 </FadeInSection>
 
