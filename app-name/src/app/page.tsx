@@ -290,9 +290,9 @@ export default function Component() {
 
 {/* Sección con la caricatura y el texto adicional */}
 <FadeInSection delay={0.1}>
-  <section className="mb-20 flex flex-col md:flex-row items-center justify-center gap-8">
+  <section className="mb-20 flex flex-col md:flex-row items-center justify-center gap-8 min-h-[550px]">
     {/* Columna de la imagen (caricatura) */}
-    <div className="w-full md:w-[65%] flex justify-center">
+    <div className="w-full md:w-[55%] flex justify-center">
       <a
         href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
         target="_blank"
@@ -307,11 +307,11 @@ export default function Component() {
     </div>
 
     {/* Columna del texto con fondo blanco */}
-    <div className="w-full md:w-[35%] bg-white p-6 rounded-lg shadow-md text-center">
-      <h3 className="text-xl font-semibold text-[#78AAC3] mb-4">
+    <div className="w-full md:w-[45%] bg-white p-8 rounded-lg shadow-md text-center flex flex-col justify-center">
+      <h3 className="text-2xl font-semibold text-[#78AAC3] mb-4">
         ¡Tu reseña es importante!
       </h3>
-      <p className="text-gray-600 mb-6">
+      <p className="text-lg text-gray-600 mb-6">
         Esto puede tomar 1 minuto de tu tiempo, pero ayudará a miles de personas a iniciar su camino hacia el bienestar mental.
       </p>
       <a
