@@ -312,7 +312,7 @@ export default function Component() {
         ¡Tu reseña es importante!
       </h3>
       <p className="text-lg text-gray-600 mb-6">
-        Esto puede tomar 1 minuto de tu tiempo, pero ayudará a miles de personas a iniciar su camino hacia el bienestar mental.
+        Esto puede tomar 1 minuto de tu tiempo, pero ayudará e inspirará a otras personas a iniciar su camino hacia el bienestar mental.
       </p>
       <a
         href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
