@@ -330,7 +330,7 @@ export default function Component() {
 
         <FadeInSection delay={0.2}>
           <section className="mb-20" id="servicios">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Nuestros Servicios</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Mis Servicios</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
                 <Card>
