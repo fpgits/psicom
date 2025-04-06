@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from 'react'
 
 export default function GoogleReviewsLazy() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [hasLoaded, setHasLoaded] = useState(false)
+  const [showWidget, setShowWidget] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setHasLoaded(true)
+          setShowWidget(true)
           observer.disconnect()
         }
       },
@@ -25,34 +25,32 @@ export default function GoogleReviewsLazy() {
   }, [])
 
   useEffect(() => {
-    if (hasLoaded && typeof window !== 'undefined') {
-      const scriptId = 'elfsight-platform-script'
-      const scriptAlreadyExists = document.getElementById(scriptId)
+    if (showWidget && typeof window !== 'undefined') {
+      const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]')
 
-      if (!scriptAlreadyExists) {
-        const script = document.createElement('script')
-        script.id = scriptId
-        script.src = 'https://static.elfsight.com/platform/platform.js'
-        script.async = true
-        script.onload = () => {
-          if (window.ELFSIGHT_WIDGETS) {
-            window.ELFSIGHT_WIDGETS.init()
-          }
-        }
-        document.body.appendChild(script)
-      } else {
+      const loadWidget = () => {
         if (window.ELFSIGHT_WIDGETS) {
           window.ELFSIGHT_WIDGETS.init()
         }
       }
+
+      if (!existingScript) {
+        const script = document.createElement('script')
+        script.src = 'https://static.elfsight.com/platform/platform.js'
+        script.async = true
+        script.onload = loadWidget
+        document.body.appendChild(script)
+      } else {
+        loadWidget()
+      }
     }
-  }, [hasLoaded])
+  }, [showWidget])
 
   return (
     <div
       ref={containerRef}
       className={`transition-opacity duration-1000 ${
-        hasLoaded ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        showWidget ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div className="bg-white shadow-lg rounded-lg p-4 max-w-5xl mx-auto">
