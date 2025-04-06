@@ -425,30 +425,19 @@ export default function Component() {
         </FadeInSection>
 
         <FadeInSection delay={0.6}>
-          <section className="mb-20" id="testimonios">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Testimonios de Mis Pacientes en Venezuela</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Testimonial 
-                number={1}
-                date="15 de mayo, 2023"
-                rating={5}
-                comment="Las sesiones online con Mariany han sido una bendición. Desde Maracaibo, he podido recibir ayuda profesional de calidad sin salir de casa. ¡Totalmente recomendada!"
-              />
-              <Testimonial 
-                number={2}
-                date="3 de junio, 2023"
-                rating={5}
-                comment="Como caraqueño, encontrar un psicólogo de confianza era crucial. Mariany no solo es profesional, sino que también crea un ambiente cómodo y seguro. Ha sido de gran ayuda en mi proceso."
-              />
-              <Testimonial 
-                number={3}
-                date="20 de julio, 2023"
-                rating={5}
-                comment="Desde Valencia, he estado tomando sesiones online con Mariany. Su enfoque y técnicas han sido fundamentales para manejar mi ansiedad. Gracias por hacer la terapia accesible en todo el país."
-              />
-            </div>
-          </section>
-        </FadeInSection>
+  <section className="mb-20" id="testimonios">
+    <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Lo que opinan mis pacientes</h2>
+
+    <div className="w-full flex justify-center">
+      {/* Script para cargar Elfsight */}
+      <div dangerouslySetInnerHTML={{ __html: `
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" data-elfsight-app-lazy></div>
+      ` }} />
+    </div>
+  </section>
+</FadeInSection>
+
 
         <FadeInSection delay={0.8}>
           <section className="mb-20" id="mindful">
