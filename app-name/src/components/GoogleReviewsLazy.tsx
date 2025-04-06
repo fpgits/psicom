@@ -18,9 +18,7 @@ export default function GoogleReviewsLazy() {
       { threshold: 0.2 }
     )
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
+    if (containerRef.current) observer.observe(containerRef.current)
 
     return () => observer.disconnect()
   }, [])
@@ -28,7 +26,7 @@ export default function GoogleReviewsLazy() {
   useEffect(() => {
     if (!showWidget) return
 
-    // Insert Elfsight script if it doesn't exist
+    // Cargar script si no existe
     const existingScript = document.getElementById('elfsight-script')
     if (!existingScript) {
       const script = document.createElement('script')
@@ -38,29 +36,16 @@ export default function GoogleReviewsLazy() {
       document.body.appendChild(script)
     }
 
-    // Wait for Elfsight iframe to load and detect the load event
-    const interval = setInterval(() => {
-      const iframe = containerRef.current?.querySelector('iframe')
-      if (iframe) {
-        iframe.addEventListener('load', () => {
-          setIsLoaded(true)
-        })
-        clearInterval(interval)
-      }
-    }, 300)
+    // Esperar 1.8s y quitar el loading
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 1800)
 
-    // Cleanup interval after 10 seconds just in case
-    const timeout = setTimeout(() => clearInterval(interval), 10000)
-
-    return () => {
-      clearInterval(interval)
-      clearTimeout(timeout)
-    }
+    return () => clearTimeout(timer)
   }, [showWidget])
 
   return (
     <div ref={containerRef} className="relative min-h-[200px]">
-      {/* Loading */}
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10 rounded-lg">
           <div className="flex items-center gap-2 text-gray-500 text-sm">
@@ -89,7 +74,7 @@ export default function GoogleReviewsLazy() {
         </div>
       )}
 
-      {/* Widget */}
+      {/* Widget Elfsight */}
       <div className={`transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {showWidget && (
           <div className="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" />
