@@ -10,7 +10,7 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-eval' 'unsafe-inline';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.elfsight.com;
               style-src 'self' 'unsafe-inline';
               img-src 'self' data: blob:;
               font-src 'self';
