@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 export default function GoogleReviewsLazy() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [showWidget, setShowWidget] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,28 +26,31 @@ export default function GoogleReviewsLazy() {
   }, [])
 
   useEffect(() => {
-    if (showWidget) {
-      const existing = document.getElementById('elfsight-script')
-      if (!existing) {
+    if (showWidget && typeof window !== 'undefined') {
+      const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]')
+      if (!existingScript) {
         const script = document.createElement('script')
         script.src = 'https://static.elfsight.com/platform/platform.js'
         script.async = true
-        script.id = 'elfsight-script'
         document.body.appendChild(script)
       }
+
+      // Detect when the Elfsight iframe is actually loaded
+      const checkIframeLoaded = setInterval(() => {
+        const iframe = containerRef.current?.querySelector('iframe')
+        if (iframe) {
+          setIsLoaded(true)
+          clearInterval(checkIframeLoaded)
+        }
+      }, 300)
+
+      return () => clearInterval(checkIframeLoaded)
     }
   }, [showWidget])
 
   return (
-    <div
-      ref={containerRef}
-      className={`transition-opacity duration-1000 ${
-        showWidget ? 'opacity-100' : 'opacity-0 pointer-events-none'
-      }`}
-    >
-      {showWidget && (
-        <div className="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4"></div>
-      )}
-    </div>
-  )
-}
+    <div ref={containerRef} className="relative min-h-[150px]">
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-70 z-10 rounded-lg">
+          <div className="flex items-center gap-2 text-gray-500 text-sm animate-pulse">
+            <svg className="animate-spin h-5 w-5 text-[#78AAC3]" view
