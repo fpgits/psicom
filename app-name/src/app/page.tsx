@@ -136,7 +136,6 @@ export default function Component() {
   return (
     <div className="bg-gradient-to-b from-[#C4DDF5] to-white min-h-screen">
       <Head>
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
         <title>Tu Bienestar Mental | Psicóloga Mariany Rodríguez en Venezuela</title>
         <meta name="description" content="Mejora tu salud mental con la psicóloga Mariany Rodríguez. Ofrecemos terapia online, individual y de pareja en Venezuela. Especialistas en TDAH, autismo, ansiedad y depresión." />
         <script type="application/ld+json">

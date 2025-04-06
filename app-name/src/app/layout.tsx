@@ -19,3 +19,14 @@ export default function RootLayout({
     </html>
   )
 }
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="es">
+      <head>
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      </head>
+      <body>{children}</body>
+    </html>
+  )
+}
