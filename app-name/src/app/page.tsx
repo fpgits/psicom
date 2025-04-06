@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/sheet"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Head from 'next/head'
+import GoogleReviewsLazy from '@/components/GoogleReviewsLazy'
 
 interface TestimonialProps {
   number: number;
@@ -426,15 +427,10 @@ export default function Component() {
 
         <FadeInSection delay={0.6}>
   <section className="mb-20" id="testimonios">
-    <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">Lo que opinan mis pacientes</h2>
-
-    <div className="w-full flex justify-center">
-      {/* Script para cargar Elfsight */}
-      <div dangerouslySetInnerHTML={{ __html: `
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" data-elfsight-app-lazy></div>
-      ` }} />
-    </div>
+    <h2 className="text-2xl md:text-3xl font-bold text-center text-[#78AAC3] mb-12">
+      Lo que opinan mis pacientes
+    </h2>
+    <GoogleReviewsLazy />
   </section>
 </FadeInSection>
 
