@@ -26,31 +26,65 @@ export default function GoogleReviewsLazy() {
   }, [])
 
   useEffect(() => {
-    if (showWidget && typeof window !== 'undefined') {
-      const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]')
+    if (showWidget) {
+      const existingScript = document.getElementById('elfsight-script')
       if (!existingScript) {
         const script = document.createElement('script')
         script.src = 'https://static.elfsight.com/platform/platform.js'
         script.async = true
+        script.id = 'elfsight-script'
         document.body.appendChild(script)
       }
 
-      // Detect when the Elfsight iframe is actually loaded
-      const checkIframeLoaded = setInterval(() => {
+      // Chequea cada 300ms si el iframe fue cargado
+      const checkLoaded = setInterval(() => {
         const iframe = containerRef.current?.querySelector('iframe')
         if (iframe) {
           setIsLoaded(true)
-          clearInterval(checkIframeLoaded)
+          clearInterval(checkLoaded)
         }
       }, 300)
 
-      return () => clearInterval(checkIframeLoaded)
+      return () => clearInterval(checkLoaded)
     }
   }, [showWidget])
 
   return (
-    <div ref={containerRef} className="relative min-h-[150px]">
+    <div ref={containerRef} className="relative min-h-[200px]">
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-70 z-10 rounded-lg">
-          <div className="flex items-center gap-2 text-gray-500 text-sm animate-pulse">
-            <svg className="animate-spin h-5 w-5 text-[#78AAC3]" view
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10 rounded-lg">
+          <div className="flex items-center gap-2 text-gray-500 text-sm">
+            <svg
+              className="animate-spin h-5 w-5 text-[#78AAC3]"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
+              />
+            </svg>
+            Cargando opiniones...
+          </div>
+        </div>
+      )}
+
+      {/* Widget */}
+      <div className={`transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        {showWidget && (
+          <div className="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" />
+        )}
+      </div>
+    </div>
+  )
+}
