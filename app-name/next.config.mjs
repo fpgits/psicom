@@ -14,8 +14,8 @@ const nextConfig = {
               style-src 'self' 'unsafe-inline';
               img-src 'self' data: blob:;
               font-src 'self';
-              connect-src 'self';
-              frame-src 'self';
+              connect-src 'self' https://core.service.elfsight.com;
+              frame-src 'self' https://apps.elfsight.com;
               object-src 'none';
               base-uri 'self';
               form-action 'self';
