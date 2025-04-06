@@ -12,10 +12,10 @@ const nextConfig = {
               default-src 'self';
               script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.elfsight.com https://universe-static.elfsightcdn.com;
               style-src 'self' 'unsafe-inline';
-              img-src 'self' data: blob: https:;
-              font-src 'self' https:;
-              connect-src 'self' https://core.service.elfsight.com;
-              frame-src 'self';
+              img-src 'self' data: blob: https://static.elfsight.com https://universe-static.elfsightcdn.com;
+              font-src 'self';
+              connect-src 'self' https://core.service.elfsight.com https://service-reviews-ultimate.elfsight.com;
+              frame-src 'self' https://apps.elfsight.com https://widgets.elfsight.com;
               object-src 'none';
               base-uri 'self';
               form-action 'self';
