@@ -14,7 +14,7 @@ const nextConfig = {
               style-src 'self' 'unsafe-inline';
               img-src 'self' data: blob: https://*.gstatic.com https://lh3.googleusercontent.com https://static.elfsight.com https://universe-static.elfsightcdn.com;
               font-src 'self' https://static.elfsight.com https://fonts.gstatic.com;
-              connect-src 'self' https://core.service.elfsight.com https://service-reviews-ultimate.elfsight.com;
+              connect-src 'self' https://core.service.elfsight.com https://service-reviews-ultimate.elfsight.com https://static.elfsight.com;
               frame-src 'self' https://apps.elfsight.com;
               object-src 'none';
               base-uri 'self';
