@@ -6,13 +6,29 @@ export default function GoogleReviewsLazy() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [showWidget, setShowWidget] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [canShow, setCanShow] = useState(true)
 
+  // Verifica si se mostró 3 veces antes
   useEffect(() => {
+    const views = parseInt(localStorage.getItem('google_reviews_shown') || '0', 10)
+    if (views >= 3) {
+      setCanShow(false)
+    }
+  }, [])
+
+  // Dispara el widget cuando entra en viewport
+  useEffect(() => {
+    if (!canShow) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setShowWidget(true)
           observer.disconnect()
+
+          // Incrementa el contador de vistas
+          const current = parseInt(localStorage.getItem('google_reviews_shown') || '0', 10)
+          localStorage.setItem('google_reviews_shown', String(current + 1))
         }
       },
       { threshold: 0.2 }
@@ -21,12 +37,12 @@ export default function GoogleReviewsLazy() {
     if (containerRef.current) observer.observe(containerRef.current)
 
     return () => observer.disconnect()
-  }, [])
+  }, [canShow])
 
+  // Cargar el widget y eliminar loading luego de 1.8s
   useEffect(() => {
-    if (!showWidget) return
+    if (!showWidget || !canShow) return
 
-    // Cargar script si no existe
     const existingScript = document.getElementById('elfsight-script')
     if (!existingScript) {
       const script = document.createElement('script')
@@ -36,13 +52,15 @@ export default function GoogleReviewsLazy() {
       document.body.appendChild(script)
     }
 
-    // Esperar 1.8s y quitar el loading
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 1800)
 
     return () => clearTimeout(timer)
-  }, [showWidget])
+  }, [showWidget, canShow])
+
+  // Si ya no se debe mostrar, renderiza null
+  if (!canShow) return null
 
   return (
     <div ref={containerRef} className="relative min-h-[200px]">
@@ -74,7 +92,6 @@ export default function GoogleReviewsLazy() {
         </div>
       )}
 
-      {/* Widget Elfsight */}
       <div className={`transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {showWidget && (
           <div className="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" />
