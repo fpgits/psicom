@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from 'react'
 
 export default function GoogleReviewsLazy() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [showWidget, setShowWidget] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setShowWidget(true)
           observer.disconnect()
         }
       },
@@ -25,13 +25,15 @@ export default function GoogleReviewsLazy() {
   }, [])
 
   return (
-    <div ref={containerRef} className="w-full flex justify-center min-h-[300px]">
-      {isVisible && (
-        <div dangerouslySetInnerHTML={{ __html: `
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
-          <div class="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" data-elfsight-app-lazy></div>
-        ` }} />
-      )}
+    <div
+      ref={containerRef}
+      className={`transition-opacity duration-1000 ${
+        showWidget ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+    >
+      <div className="bg-white shadow-lg rounded-lg p-4 max-w-5xl mx-auto">
+        <div className="elfsight-app-2b731141-603a-417a-b522-635b3eba1da4" data-elfsight-app-lazy></div>
+      </div>
     </div>
   )
 }
