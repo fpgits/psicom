@@ -24,6 +24,19 @@ export default function GoogleReviewsLazy() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    // Carga el script de Elfsight una vez que showWidget es true
+    if (showWidget && typeof window !== 'undefined') {
+      const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]')
+      if (!existingScript) {
+        const script = document.createElement('script')
+        script.src = 'https://static.elfsight.com/platform/platform.js'
+        script.async = true
+        document.body.appendChild(script)
+      }
+    }
+  }, [showWidget])
+
   return (
     <div
       ref={containerRef}
