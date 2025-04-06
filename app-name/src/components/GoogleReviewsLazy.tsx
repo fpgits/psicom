@@ -26,31 +26,41 @@ export default function GoogleReviewsLazy() {
   }, [])
 
   useEffect(() => {
-    if (showWidget) {
-      const existingScript = document.getElementById('elfsight-script')
-      if (!existingScript) {
-        const script = document.createElement('script')
-        script.src = 'https://static.elfsight.com/platform/platform.js'
-        script.async = true
-        script.id = 'elfsight-script'
-        document.body.appendChild(script)
-      }
+    if (!showWidget) return
 
-      // Chequea cada 300ms si el iframe fue cargado
-      const checkLoaded = setInterval(() => {
-        const iframe = containerRef.current?.querySelector('iframe')
-        if (iframe) {
+    // Insert Elfsight script if it doesn't exist
+    const existingScript = document.getElementById('elfsight-script')
+    if (!existingScript) {
+      const script = document.createElement('script')
+      script.src = 'https://static.elfsight.com/platform/platform.js'
+      script.async = true
+      script.id = 'elfsight-script'
+      document.body.appendChild(script)
+    }
+
+    // Wait for Elfsight iframe to load and detect the load event
+    const interval = setInterval(() => {
+      const iframe = containerRef.current?.querySelector('iframe')
+      if (iframe) {
+        iframe.addEventListener('load', () => {
           setIsLoaded(true)
-          clearInterval(checkLoaded)
-        }
-      }, 300)
+        })
+        clearInterval(interval)
+      }
+    }, 300)
 
-      return () => clearInterval(checkLoaded)
+    // Cleanup interval after 10 seconds just in case
+    const timeout = setTimeout(() => clearInterval(interval), 10000)
+
+    return () => {
+      clearInterval(interval)
+      clearTimeout(timeout)
     }
   }, [showWidget])
 
   return (
     <div ref={containerRef} className="relative min-h-[200px]">
+      {/* Loading */}
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10 rounded-lg">
           <div className="flex items-center gap-2 text-gray-500 text-sm">
