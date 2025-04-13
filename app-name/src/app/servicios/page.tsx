@@ -276,7 +276,7 @@ export default function ServiciosPage() {
 
         <section className="mb-20">
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¿Listo para comenzar tu viaje hacia el bienestar emocional?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#78AAC3] mb-6">¿List@ para comenzar tu viaje hacia el bienestar emocional?</h2>
             <p className="text-lg text-gray-600 mb-8">No esperes más para dar el primer paso hacia una vida más plena y satisfactoria.</p>
             <div className="transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
               <Button className="bg-[#EEAB73] hover:bg-[#F5A281] text-white text-lg px-8 py-3" onClick={handleAppointmentClick}>
