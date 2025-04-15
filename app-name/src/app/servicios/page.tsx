@@ -248,6 +248,7 @@ export default function ServiciosPage() {
                   <div className="text-center mb-4">
                     <span className="text-2xl font-bold line-through text-gray-400">$35</span>
                     <p className="text-3xl font-bold text-[#78AAC3]">$20</p>
+                    <p className="text-3xl text-[#78AAC3]">¡PRECIO ESPECIAL!</p>
                   </div>
                   <ul className="space-y-2">
                     <li className="flex items-center">
