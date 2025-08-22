@@ -246,7 +246,7 @@ export default function ServiciosPage() {
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="text-center mb-4">
-                    <span className="text-2xl font-bold line-through text-gray-400">$35</span>
+                    <span className="text-2xl font-bold line-through text-gray-400">$40</span>
                     <p className="text-3xl font-bold text-[#78AAC3]">$30</p>
                     <p className="text-1xl text-[#78AAC3]">¡PRECIO ESPECIAL POR HOY!</p>
                   </div>
