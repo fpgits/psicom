@@ -171,7 +171,7 @@ export default function ServiciosPage() {
             }
             .top-bar-content {
               gap: 6px;
-              flex-wrap: wrap;
+              flex-wrap: inherit;
             }
             .icon {
               font-size: 14px;
