@@ -93,9 +93,9 @@ export default function ServiciosPage() {
 
   return (
     <div className="bg-gradient-to-b from-[#C4DDF5] to-white min-h-screen">
-      <LoadingModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <LoadingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
         onRedirect={handleRedirect}
       />
       <Dialog open={isProximamenteModalOpen} onOpenChange={setIsProximamenteModalOpen}>
@@ -108,7 +108,77 @@ export default function ServiciosPage() {
           </DialogHeader>
         </DialogContent>
       </Dialog>
+
       <header className="bg-white shadow-sm sticky top-0 z-10 transition-all duration-500 ease-in-out">
+        {/* Banner de Consultas Online */}
+        <div className="top-bar">
+          <div className="top-bar-content">
+            <span className="icon" aria-hidden="true">💻</span>
+            <span>
+              Durante <span className="highlight">Octubre y Noviembre</span> sólo se atienden <span className="highlight">consultas online</span>
+            </span>
+          </div>
+        </div>
+
+        {/* estilos del banner, aislados al componente */}
+        <style jsx>{`
+          .top-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+          }
+          .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+          }
+          @keyframes shine {
+            to { left: 100%; }
+          }
+          .top-bar-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+          }
+          .icon {
+            font-size: 16px;
+          }
+          .highlight {
+            font-weight: 700;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+          }
+          @media (max-width: 640px) {
+            .top-bar {
+              padding: 10px 16px;
+              font-size: 12px;
+            }
+            .top-bar-content {
+              gap: 6px;
+              flex-wrap: wrap;
+            }
+            .icon {
+              font-size: 14px;
+            }
+          }
+        `}</style>
+
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center py-4">
             <Link href="/" className="flex items-center space-x-4 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
@@ -240,7 +310,6 @@ export default function ServiciosPage() {
             </div>
             <div className="transition-all duration-300 ease-in-out hover:-translate-y-2">
               <Card className="flex flex-col h-full relative overflow-hidden">
-                
                 <CardHeader>
                   <h3 className="text-xl font-semibold text-center">Sesión individual - Online o Presencial</h3>
                 </CardHeader>
@@ -295,7 +364,6 @@ export default function ServiciosPage() {
               <img src="/images/logo.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 mb-2" />
               <p className="text-sm">© 2024 Trabajando Tu Mente</p>
             </div>
-          
           </div>
         </div>
       </footer>
