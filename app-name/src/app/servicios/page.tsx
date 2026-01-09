@@ -115,7 +115,7 @@ export default function ServiciosPage() {
           <div className="top-bar-content">
             <span className="icon" aria-hidden="true">💻</span>
             <span>
-              Durante <span className="highlight">Octubre y Noviembre</span> sólo se atienden <span className="highlight">consultas online</span>
+             Ofertas especiales <span className="highlight">Enero y Febrero 2026</span>
             </span>
           </div>
         </div>
