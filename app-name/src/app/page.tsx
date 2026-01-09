@@ -158,16 +158,16 @@ export default function Component() {
 
       <LoadingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-      <header className="bg-white shadow-sm sticky top-0 z-10 transition-all duration-500 ease-in-out">
-        {/* Banner de Consultas Online */}
-        <div className="top-bar">
-          <div className="top-bar-content">
-            <span className="icon" aria-hidden="true">💻</span>
-            <span>
-              Durante <span className="highlight">Octubre y Noviembre</span> sólo se atienden <span className="highlight">consultas online</span>
-            </span>
-          </div>
-        </div>
+{/*
+<div className="top-bar">
+  <div className="top-bar-content">
+    <span className="icon" aria-hidden="true">💻</span>
+    <span>
+      Durante <span className="highlight">Octubre y Noviembre</span> sólo se atienden <span className="highlight">consultas online</span>
+    </span>
+  </div>
+</div>
+*/}
 
         {/* estilos del banner, aislados al componente */}
         <style jsx>{`
