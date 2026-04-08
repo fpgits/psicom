@@ -1,6 +1,7 @@
 import { Playfair_Display, Inter } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { SchemaMarkup, FaqSchema, ProfessionalServiceSchema } from '@/components/SchemaMarkup'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -104,7 +105,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://mindful.tubienestarmental.com" />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <SchemaMarkup />
+        <FaqSchema />
+        <ProfessionalServiceSchema />
+        {children}
+      </body>
     </html>
   )
 }

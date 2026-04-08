@@ -1,20 +1,20 @@
-'use server';
-
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://tubienestarmental.com';
+  
   return [
     {
-      url: 'https://tubienestarmental.com',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: 'https://tubienestarmental.com/servicios',
+      url: `${baseUrl}/servicios`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
   ];
 }
