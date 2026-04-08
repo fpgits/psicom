@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Menu, 
   ArrowRight, 
   Brain, 
   Heart, 
@@ -18,87 +19,25 @@ import {
   Shield,
   Clock
 } from 'lucide-react'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import GoogleReviewsLazy from '@/components/GoogleReviewsLazy'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import LoadingModal from '@/components/LoadingModal'
+import AnimatedSection from '@/components/AnimatedSection'
 
-// Loading Modal Component
-function LoadingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    if (isOpen) {
-      const timer = setTimeout(() => setIsLoading(false), 2500)
-      return () => clearTimeout(timer)
-    }
-  }, [isOpen])
-
-  useEffect(() => {
-    if (!isLoading && isOpen) {
-      const redirectTimer = setTimeout(() => {
-        window.location.href = 'https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n'
-      }, 800)
-      return () => clearTimeout(redirectTimer)
-    }
-  }, [isLoading, isOpen])
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md border-0 bg-card">
-        <DialogHeader className="text-center">
-          <DialogTitle className="font-serif text-2xl text-foreground">
-            {isLoading ? 'Verificando disponibilidad' : 'Disponible'}
-          </DialogTitle>
-          <DialogDescription className="pt-4">
-            {isLoading ? (
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-12 h-12 rounded-full border-2 border-primary border-t-transparent animate-spin" />
-                <span className="text-muted-foreground">Buscando horarios disponibles...</span>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-4 text-primary">
-                <CheckCircle className="w-12 h-12" />
-                <span className="font-medium">Redirigiendo a WhatsApp...</span>
-              </div>
-            )}
-          </DialogDescription>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-// Animated Section Component
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay * 150)
-    return () => clearTimeout(timer)
-  }, [delay])
-
-  return (
-    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}>
-      {children}
+// Lazy load heavy components
+const GoogleReviewsLazy = dynamic(() => import('@/components/GoogleReviewsLazy'), {
+  loading: () => (
+    <div className="flex items-center justify-center min-h-[200px]">
+      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
     </div>
-  )
-}
+  ),
+  ssr: false
+})
 
 // Service Card Component
-function ServiceCard({ icon: Icon, title, description, delay }: { icon: typeof Brain; title: string; description: string; delay: number }) {
+function ServiceCard({ icon: Icon, title, description }: { icon: typeof Brain; title: string; description: string }) {
   return (
-    <AnimatedSection delay={delay}>
+    <AnimatedSection>
       <Card className="group h-full border-0 bg-card shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
         <CardContent className="p-8">
           <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
@@ -129,103 +68,13 @@ function ValueCard({ icon: Icon, title, description }: { icon: typeof Shield; ti
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const handleAppointmentClick = () => setIsModalOpen(true)
-
-  const navLinks = [
-    { href: '#servicios', label: 'Servicios' },
-    { href: '#sobre-mi', label: 'Sobre Mi' },
-    { href: '#testimonios', label: 'Testimonios' },
-  ]
 
   return (
     <div className="min-h-screen bg-background">
       <LoadingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
-      {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <nav className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <img src="/images/logo.png" alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-105" />
-              <span className="font-serif text-xl font-semibold text-foreground">Tu Bienestar Mental</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <Link href="/servicios" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-                  Planes
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://mindful.tubienestarmental.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rainbow-button inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold"
-                >
-                  <Sparkles className="w-4 h-4" />
-                  Mindful
-                </a>
-              </li>
-              <li>
-                <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
-                  Agendar Cita
-                </Button>
-              </li>
-            </ul>
-
-            {/* Mobile Menu */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-background border-border">
-                <nav className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <a key={link.href} href={link.href} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </a>
-                  ))}
-                  <Link href="/servicios" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                    Planes
-                  </Link>
-                  <a
-                    href="https://mindful.tubienestarmental.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rainbow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-base font-semibold"
-                  >
-                    <Sparkles className="w-5 h-5" />
-                    Mindful
-                  </a>
-                  <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-2">
-                    Agendar Cita
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </nav>
-        </div>
-      </header>
+      <Header onAppointmentClick={handleAppointmentClick} activePage="home" />
 
       <main>
         {/* Hero Section */}
@@ -236,7 +85,7 @@ export default function HomePage() {
           
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <AnimatedSection delay={1}>
+              <AnimatedSection>
                 <div className="space-y-8">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                     <Sparkles className="w-4 h-4" />
@@ -282,13 +131,17 @@ export default function HomePage() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection delay={2} className="relative">
+              <AnimatedSection className="relative">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-                  <img
+                  <Image
                     src="/images/foto1.jpg"
                     alt="Mariany Rodriguez - Psicologa Clinica"
+                    width={600}
+                    height={750}
                     className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
                   {/* Floating Card */}
@@ -312,7 +165,7 @@ export default function HomePage() {
         {/* Services Section */}
         <section id="servicios" className="py-20 lg:py-28 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <AnimatedSection delay={1} className="text-center max-w-3xl mx-auto mb-16">
+            <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-medium text-sm uppercase tracking-wider">Servicios</span>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-6 text-balance">
                 Atencion especializada para tu bienestar
@@ -328,41 +181,35 @@ export default function HomePage() {
                 icon={Brain}
                 title="Salud Mental"
                 description="Priorizamos tu bienestar mental para un mejor funcionamiento emocional y resolucion de problemas."
-                delay={2}
               />
               <ServiceCard
                 icon={Heart}
                 title="Terapia Individual"
                 description="Sesiones personalizadas para abordar tus necesidades especificas y alcanzar tus metas personales."
-                delay={3}
               />
               <ServiceCard
                 icon={Users}
                 title="Terapia de Pareja"
                 description="Mejora tu relacion con sesiones disenadas para fortalecer la comunicacion y resolver conflictos."
-                delay={4}
               />
               <ServiceCard
                 icon={MessageCircle}
                 title="Monitoreo Continuo"
                 description="Seguimiento semanal de tu progreso via WhatsApp, asegurando atencion constante a tu proceso."
-                delay={5}
               />
               <ServiceCard
                 icon={Clock}
                 title="Horarios Flexibles"
                 description="Terapia online adaptada a tu tiempo, ideal si no puedes asistir a sesiones presenciales."
-                delay={6}
               />
               <ServiceCard
                 icon={Sparkles}
                 title="Talleres Grupales"
                 description="Participa en sesiones tematicas para desarrollar habilidades y compartir experiencias."
-                delay={7}
               />
             </div>
 
-            <AnimatedSection delay={8} className="text-center mt-12">
+            <AnimatedSection className="text-center mt-12">
               <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-border hover:bg-secondary">
                 <Link href="/servicios">
                   Ver planes y precios
@@ -377,15 +224,18 @@ export default function HomePage() {
         <section id="sobre-mi" className="py-20 lg:py-28 bg-secondary/50">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <AnimatedSection delay={1} className="order-2 lg:order-1">
-                <img
+              <AnimatedSection className="order-2 lg:order-1">
+                <Image
                   src="/images/foto2.jpg"
                   alt="Mariany Rodriguez"
+                  width={600}
+                  height={600}
                   className="rounded-3xl shadow-xl w-full object-cover aspect-square"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </AnimatedSection>
 
-              <AnimatedSection delay={2} className="order-1 lg:order-2 space-y-8">
+              <AnimatedSection className="order-1 lg:order-2 space-y-8">
                 <div>
                   <span className="text-primary font-medium text-sm uppercase tracking-wider">Sobre Mi</span>
                   <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-6 text-balance">
@@ -436,22 +286,25 @@ export default function HomePage() {
         <section className="py-20 lg:py-28 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <AnimatedSection delay={1}>
+              <AnimatedSection>
                 <a
                   href="https://search.google.com/local/writereview?placeid=ChIJ0WGllZBZKowRsHZJZMOXEwU"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block group"
                 >
-                  <img
+                  <Image
                     src="/images/mary.png"
                     alt="Deja tu resena"
+                    width={400}
+                    height={400}
                     className="w-full max-w-md mx-auto transition-transform group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
                 </a>
               </AnimatedSection>
 
-              <AnimatedSection delay={2} className="text-center lg:text-left">
+              <AnimatedSection className="text-center lg:text-left">
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6 text-balance">
                   Tu opinion es muy importante
                 </h2>
@@ -477,7 +330,7 @@ export default function HomePage() {
         {/* Testimonials Section */}
         <section id="testimonios" className="py-20 lg:py-28 bg-secondary/50">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <AnimatedSection delay={1} className="text-center max-w-3xl mx-auto mb-16">
+            <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-medium text-sm uppercase tracking-wider">Testimonios</span>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-6 text-balance">
                 Lo que dicen mis pacientes
@@ -487,7 +340,7 @@ export default function HomePage() {
               </p>
             </AnimatedSection>
 
-            <AnimatedSection delay={2}>
+            <AnimatedSection>
               <GoogleReviewsLazy />
             </AnimatedSection>
           </div>
@@ -496,9 +349,8 @@ export default function HomePage() {
         {/* Mindful Section */}
         <section className="py-20 lg:py-28 overflow-hidden">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
-            <AnimatedSection delay={1}>
+            <AnimatedSection>
               <div className="mindful-gradient rounded-3xl p-10 lg:p-16 relative overflow-hidden">
-                {/* Rainbow stripes decoration */}
                 <div className="absolute top-0 right-0 w-3 h-full rainbow-stripes" />
                 <div className="absolute top-0 left-0 w-3 h-full rainbow-stripes" />
                 
@@ -508,17 +360,14 @@ export default function HomePage() {
                     <span>Diario Emocional</span>
                   </div>
                   
-                  <div className="space-y-2">
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                      Transforma tu Bienestar
-                    </h2>
-                  </div>
+                  <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Transforma tu Bienestar
+                  </h2>
                   
                   <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
-                    Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia. Descubre tu diario emocional diseñado para acompañarte en tu camino hacia el bienestar mental.
+                    Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia. Descubre tu diario emocional disenado para acompanarte en tu camino hacia el bienestar mental.
                   </p>
                   
-                  {/* Feature badges */}
                   <div className="flex flex-wrap justify-center gap-3">
                     <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
                       PDF Descargable
@@ -531,7 +380,6 @@ export default function HomePage() {
                     </span>
                   </div>
                   
-                  {/* Rainbow Button */}
                   <div className="pt-4">
                     <a
                       href="https://mindful.tubienestarmental.com/"
@@ -553,7 +401,7 @@ export default function HomePage() {
         {/* CTA Section */}
         <section className="py-20 lg:py-28 bg-primary">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <AnimatedSection delay={1}>
+            <AnimatedSection>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6 text-balance">
                 Listo para comenzar tu viaje hacia el bienestar emocional?
               </h2>
@@ -570,20 +418,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-foreground py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img src="/images/logo.png" alt="Logo" className="w-10 h-10" />
-              <span className="font-serif text-xl font-semibold text-background">Tu Bienestar Mental</span>
-            </div>
-            <p className="text-background/60 text-sm">
-              © 2024 Tu Bienestar Mental. Todos los derechos reservados.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

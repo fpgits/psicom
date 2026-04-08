@@ -1,93 +1,28 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { 
-  Menu, 
   ArrowRight, 
   CheckCircle, 
   Sparkles,
   Star,
   Clock,
   Users,
-  Zap
+  Zap,
+  Menu
 } from 'lucide-react'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
-// Loading Modal Component
-function LoadingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    if (isOpen) {
-      const timer = setTimeout(() => setIsLoading(false), 2500)
-      return () => clearTimeout(timer)
-    }
-  }, [isOpen])
-
-  useEffect(() => {
-    if (!isLoading && isOpen) {
-      const redirectTimer = setTimeout(() => {
-        window.location.href = 'https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n'
-      }, 800)
-      return () => clearTimeout(redirectTimer)
-    }
-  }, [isLoading, isOpen])
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md border-0 bg-card">
-        <DialogHeader className="text-center">
-          <DialogTitle className="font-serif text-2xl text-foreground">
-            {isLoading ? 'Verificando disponibilidad' : 'Disponible'}
-          </DialogTitle>
-          <DialogDescription className="pt-4">
-            {isLoading ? (
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-12 h-12 rounded-full border-2 border-primary border-t-transparent animate-spin" />
-                <span className="text-muted-foreground">Buscando horarios disponibles...</span>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-4 text-primary">
-                <CheckCircle className="w-12 h-12" />
-                <span className="font-medium">Redirigiendo a WhatsApp...</span>
-              </div>
-            )}
-          </DialogDescription>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-// Animated Section Component
-function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay * 150)
-    return () => clearTimeout(timer)
-  }, [delay])
-
-  return (
-    <div className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}>
-      {children}
-    </div>
-  )
-}
+import Footer from '@/components/Footer'
+import LoadingModal from '@/components/LoadingModal'
+import AnimatedSection from '@/components/AnimatedSection'
 
 // Pricing Card Component
 function PricingCard({ 
@@ -169,18 +104,8 @@ function PricingCard({
   )
 }
 
-export default function ServiciosPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleAppointmentClick = () => setIsModalOpen(true)
-
+// Inline Header for servicios (to avoid hydration issues with shared header)
+function ServiciosHeader({ onAppointmentClick }: { onAppointmentClick: () => void }) {
   const navLinks = [
     { href: '/#servicios', label: 'Servicios' },
     { href: '/#sobre-mi', label: 'Sobre Mi' },
@@ -188,66 +113,99 @@ export default function ServiciosPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
-      <LoadingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image 
+              src="/images/logo.png" 
+              alt="Logo" 
+              width={40} 
+              height={40} 
+              className="transition-transform group-hover:scale-105"
+              priority
+            />
+            <span className="font-serif text-xl font-semibold text-foreground">Tu Bienestar Mental</span>
+          </Link>
 
-      {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <nav className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <img src="/images/logo.png" alt="Logo" className="w-10 h-10 transition-transform group-hover:scale-105" />
-              <span className="font-serif text-xl font-semibold text-foreground">Tu Bienestar Mental</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link href="/servicios" className="text-foreground font-medium">
-                  Planes
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+                  {link.label}
                 </Link>
               </li>
-              <li>
-                <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+            ))}
+            <li>
+              <Link href="/servicios" className="text-foreground font-medium">
+                Planes
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://mindful.tubienestarmental.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rainbow-button inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold"
+              >
+                <Sparkles className="w-4 h-4" />
+                Mindful
+              </a>
+            </li>
+            <li>
+              <Button onClick={onAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+                Agendar Cita
+              </Button>
+            </li>
+          </ul>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Abrir menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="bg-background border-border">
+              <nav className="flex flex-col gap-6 mt-8">
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                ))}
+                <Link href="/servicios" className="text-lg font-medium text-primary">
+                  Planes
+                </Link>
+                <a
+                  href="https://mindful.tubienestarmental.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rainbow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-base font-semibold"
+                >
+                  <Sparkles className="w-5 h-5" />
+                  Mindful
+                </a>
+                <Button onClick={onAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-2">
                   Agendar Cita
                 </Button>
-              </li>
-            </ul>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </nav>
+      </div>
+    </header>
+  )
+}
 
-            {/* Mobile Menu */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-background border-border">
-                <nav className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </Link>
-                  ))}
-                  <Link href="/servicios" className="text-lg font-medium text-primary">
-                    Planes
-                  </Link>
-                  <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
-                    Agendar Cita
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </nav>
-        </div>
-      </header>
+export default function ServiciosPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleAppointmentClick = () => setIsModalOpen(true)
+
+  return (
+    <div className="min-h-screen bg-background">
+      <LoadingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ServiciosHeader onAppointmentClick={handleAppointmentClick} />
 
       <main>
         {/* Hero Section */}
@@ -256,7 +214,7 @@ export default function ServiciosPage() {
           <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-            <AnimatedSection delay={1} className="text-center max-w-3xl mx-auto">
+            <AnimatedSection className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 <span>Ofertas especiales disponibles</span>
@@ -278,7 +236,7 @@ export default function ServiciosPage() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8 lg:gap-6 items-stretch">
-              <AnimatedSection delay={2}>
+              <AnimatedSection>
                 <PricingCard
                   title="Sesion Individual"
                   price="30"
@@ -296,7 +254,7 @@ export default function ServiciosPage() {
                 />
               </AnimatedSection>
 
-              <AnimatedSection delay={3}>
+              <AnimatedSection>
                 <PricingCard
                   title="Paquete 3 Sesiones"
                   price="75"
@@ -315,7 +273,7 @@ export default function ServiciosPage() {
                 />
               </AnimatedSection>
 
-              <AnimatedSection delay={4}>
+              <AnimatedSection>
                 <PricingCard
                   title="Plan Mensual"
                   price="90"
@@ -340,13 +298,13 @@ export default function ServiciosPage() {
         {/* Features Section */}
         <section className="py-16 lg:py-24 bg-secondary/50">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <AnimatedSection delay={1} className="text-center max-w-3xl mx-auto mb-12">
+            <AnimatedSection className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6 text-balance">
                 Todos los planes incluyen
               </h2>
             </AnimatedSection>
 
-            <AnimatedSection delay={2}>
+            <AnimatedSection>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   { title: "Espacio Seguro", description: "Confidencialidad total en cada sesion" },
@@ -370,7 +328,7 @@ export default function ServiciosPage() {
         {/* CTA Section */}
         <section className="py-20 lg:py-28 bg-primary">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <AnimatedSection delay={1}>
+            <AnimatedSection>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6 text-balance">
                 Tienes dudas sobre que plan elegir?
               </h2>
@@ -387,20 +345,7 @@ export default function ServiciosPage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-foreground py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img src="/images/logo.png" alt="Logo" className="w-10 h-10" />
-              <span className="font-serif text-xl font-semibold text-background">Tu Bienestar Mental</span>
-            </div>
-            <p className="text-background/60 text-sm">
-              © 2024 Tu Bienestar Mental. Todos los derechos reservados.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
