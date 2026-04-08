@@ -23,6 +23,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LoadingModal from '@/components/LoadingModal'
 import AnimatedSection from '@/components/AnimatedSection'
+import { SchemaMarkup, FaqSchema } from '@/components/SchemaMarkup'
 
 // Lazy load heavy components
 const GoogleReviewsLazy = dynamic(() => import('@/components/GoogleReviewsLazy'), {
@@ -73,6 +74,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SchemaMarkup />
+      <FaqSchema />
       <LoadingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Header onAppointmentClick={handleAppointmentClick} activePage="home" />
 
