@@ -174,6 +174,17 @@ export default function HomePage() {
                 </Link>
               </li>
               <li>
+                <a
+                  href="https://mindful.tubienestarmental.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rainbow-button inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  Mindful
+                </a>
+              </li>
+              <li>
                 <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
                   Agendar Cita
                 </Button>
@@ -197,7 +208,16 @@ export default function HomePage() {
                   <Link href="/servicios" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
                     Planes
                   </Link>
-                  <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-4">
+                  <a
+                    href="https://mindful.tubienestarmental.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rainbow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-base font-semibold"
+                  >
+                    <Sparkles className="w-5 h-5" />
+                    Mindful
+                  </a>
+                  <Button onClick={handleAppointmentClick} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-2">
                     Agendar Cita
                   </Button>
                 </nav>
@@ -474,46 +494,81 @@ export default function HomePage() {
         </section>
 
         {/* Mindful Section */}
-        <section className="py-20 lg:py-28 bg-background">
+        <section className="py-20 lg:py-28 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <AnimatedSection delay={1}>
-              <div className="bg-primary/5 rounded-3xl p-8 lg:p-12">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+              <div className="mindful-gradient rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+                {/* Rainbow stripes decoration */}
+                <div className="absolute top-0 right-0 w-4 h-full rainbow-stripes hidden lg:block" />
+                <div className="absolute bottom-0 right-0 w-full h-4 rainbow-stripes lg:hidden" />
+                
+                {/* Decorative brackets */}
+                <div className="absolute top-8 left-8 text-white/20 text-6xl font-light select-none hidden lg:block">{"{"}</div>
+                <div className="absolute bottom-8 left-8 text-white/20 text-6xl font-light select-none hidden lg:block">{"}"}</div>
+                
+                <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                  <div className="space-y-6 lg:pl-12">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold uppercase tracking-wider">
                       <Sparkles className="w-4 h-4" />
-                      <span>Proximamente</span>
+                      <span>Diario Emocional</span>
                     </div>
-                    <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground text-balance">
-                      Mindful
-                    </h2>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                      Descubre nuestra nueva experiencia de bienestar emocional. 
-                      Estamos trabajando en algo especial para ti.
+                    
+                    <div className="space-y-2">
+                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        TRANSFORMA
+                      </h2>
+                      <p className="text-2xl md:text-3xl font-bold text-yellow-300">
+                        TU
+                      </p>
+                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight flex items-center gap-2">
+                        <span className="text-white/30">{"{"}</span>
+                        BIENESTAR
+                        <span className="text-white/30">{"}"}</span>
+                      </h2>
+                    </div>
+                    
+                    <p className="text-white/90 text-lg leading-relaxed max-w-md">
+                      Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia.
                     </p>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button size="lg" variant="outline" className="rounded-full px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                          Saber mas
-                          <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="border-0 bg-card">
-                        <DialogHeader>
-                          <DialogTitle className="font-serif text-2xl">Proximamente</DialogTitle>
-                          <DialogDescription className="text-muted-foreground pt-2">
-                            Estamos trabajando en algo emocionante. Mantente atento para mas novedades sobre Mindful.
-                          </DialogDescription>
-                        </DialogHeader>
-                      </DialogContent>
-                    </Dialog>
+                    
+                    {/* Feature badges */}
+                    <div className="flex flex-wrap gap-3">
+                      <span className="px-4 py-2 rounded-full bg-[#ff6b6b] text-white text-sm font-semibold uppercase">
+                        PDF Descargable
+                      </span>
+                      <span className="px-4 py-2 rounded-full bg-gray-600 text-white text-sm font-semibold">
+                        219 Paginas
+                      </span>
+                      <span className="px-4 py-2 rounded-full bg-white text-gray-800 text-sm font-semibold uppercase">
+                        Entrega Inmediata
+                      </span>
+                    </div>
+                    
+                    {/* Rainbow Button */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                      <a
+                        href="https://mindful.tubienestarmental.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rainbow-button inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg font-bold"
+                      >
+                        <Sparkles className="w-5 h-5" />
+                        Mindful
+                        <ArrowRight className="w-5 h-5" />
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <img
-                      src="/images/mindful.jpg"
-                      alt="Mindful"
-                      className="rounded-2xl shadow-lg w-full"
-                    />
+                  
+                  <div className="relative">
+                    {/* Rainbow frame around image */}
+                    <div className="absolute -inset-2 rounded-3xl rainbow-stripes opacity-80" />
+                    <div className="relative bg-white p-2 rounded-2xl">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BF208F2F3-7706-4561-9C88-D99E307BC0BE%7D-vZedJBoPzMoh9x5e9aoWzPDy0HoFZA.png"
+                        alt="Mindful - Diario Emocional"
+                        className="rounded-xl w-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
