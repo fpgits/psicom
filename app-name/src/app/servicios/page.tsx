@@ -221,11 +221,11 @@ export default function ServiciosPage() {
               </div>
               
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6 text-balance">
-                Planes disenados para tu bienestar
+                Planes diseñados para tu bienestar
               </h1>
               
               <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Elige el plan que mejor se adapte a tus necesidades. Todos incluyen atencion 
+                Elige el plan que mejor se adapte a tus necesidades. Todos incluyen atención 
                 personalizada y seguimiento continuo de tu progreso.
               </p>
             </AnimatedSection>
@@ -238,17 +238,17 @@ export default function ServiciosPage() {
             <div className="grid md:grid-cols-3 gap-8 lg:gap-6 items-stretch">
               <AnimatedSection>
                 <PricingCard
-                  title="Sesion Individual"
+                  title="Sesión Individual"
                   price="30"
                   originalPrice="40"
                   icon={Zap}
                   highlight="Precio especial"
                   features={[
-                    "Una sesion de 60 minutos",
+                    "Una sesión de 60 minutos",
                     "Online o presencial",
                     "Ideal para consultas puntuales",
                     "Sin compromiso a largo plazo",
-                    "Seguimiento post-sesion"
+                    "Seguimiento post-sesión"
                   ]}
                   onSelect={handleAppointmentClick}
                 />
@@ -264,9 +264,9 @@ export default function ServiciosPage() {
                   features={[
                     "3 sesiones de 60 minutos",
                     "Ahorra $15 en total",
-                    "Perfecto para problemas especificos",
-                    "Mantiene el ritmo terapeutico",
-                    "Seguimiento semanal via WhatsApp",
+                    "Perfecto para problemas específicos",
+                    "Mantiene el ritmo terapéutico",
+                    "Seguimiento semanal vía WhatsApp",
                     "Recursos adicionales incluidos"
                   ]}
                   onSelect={handleAppointmentClick}
@@ -283,7 +283,7 @@ export default function ServiciosPage() {
                   features={[
                     "Hasta 4 sesiones al mes",
                     "Ahorra $30 en total",
-                    "Maxima flexibilidad horaria",
+                    "Máxima flexibilidad horaria",
                     "Ideal para terapia continua",
                     "Seguimiento diario si es necesario",
                     "Prioridad en agenda"
@@ -307,10 +307,10 @@ export default function ServiciosPage() {
             <AnimatedSection>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { title: "Espacio Seguro", description: "Confidencialidad total en cada sesion" },
-                  { title: "Atencion Personalizada", description: "Terapia adaptada a tus necesidades" },
+                  { title: "Espacio Seguro", description: "Confidencialidad total en cada sesión" },
+                  { title: "Atención Personalizada", description: "Terapia adaptada a tus necesidades" },
                   { title: "Flexibilidad Total", description: "Elige entre online o presencial" },
-                  { title: "Seguimiento Continuo", description: "Apoyo entre sesiones via WhatsApp" }
+                  { title: "Seguimiento Continuo", description: "Apoyo entre sesiones vía WhatsApp" }
                 ].map((item, index) => (
                   <div key={index} className="bg-card rounded-2xl p-6 text-center shadow-sm">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -330,10 +330,10 @@ export default function ServiciosPage() {
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6 text-balance">
-                Tienes dudas sobre que plan elegir?
+                ¿Tienes dudas sobre qué plan elegir?
               </h2>
               <p className="text-primary-foreground/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-                Contactame y con gusto te ayudare a encontrar la opcion perfecta para ti. 
+                Contactame y con gusto te ayudaré a encontrar la opción perfecta para ti. 
                 Tu bienestar es mi prioridad.
               </p>
               <Button size="lg" onClick={handleAppointmentClick} className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-10 h-14 text-base">
