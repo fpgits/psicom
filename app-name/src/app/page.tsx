@@ -111,10 +111,10 @@ export default function HomePage() {
                     </Button>
                   </div>
 
-                  <div className="flex items-center gap-6 pt-4">
+                  <a href="#testimonios" className="flex items-center gap-6 pt-4 group cursor-pointer hover:opacity-80 transition-opacity">
                     <div className="flex -space-x-3">
                       {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="w-10 h-10 rounded-full bg-secondary border-2 border-background flex items-center justify-center">
+                        <div key={i} className="w-10 h-10 rounded-full bg-secondary border-2 border-background flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Heart className="w-4 h-4 text-primary" />
                         </div>
                       ))}
@@ -125,9 +125,9 @@ export default function HomePage() {
                           <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                         ))}
                       </div>
-                      <p className="text-sm text-muted-foreground">+100 pacientes satisfechos</p>
+                      <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">+100 pacientes satisfechos</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </AnimatedSection>
 
