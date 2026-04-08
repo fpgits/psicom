@@ -106,3 +106,78 @@
     text-wrap: pretty;
   }
 }
+
+/* Rainbow Button Styles */
+.rainbow-button {
+  position: relative;
+  z-index: 10;
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: linear-gradient(
+    90deg,
+    #ff6b6b,
+    #ffa94d,
+    #ffd43b,
+    #69db7c,
+    #4dabf7,
+    #7950f2,
+    #da77f2,
+    #ff6b6b
+  );
+  background-size: 400% 100%;
+  animation: rainbow-flow 3s ease infinite;
+  border: none;
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 4px 15px rgba(255, 107, 107, 0.4),
+    0 0 30px rgba(255, 107, 107, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rainbow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 25px rgba(255, 107, 107, 0.5),
+    0 0 40px rgba(255, 107, 107, 0.3);
+}
+
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mindful Section Coral Background */
+.mindful-gradient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 50%, #ffa8a8 100%);
+}
+
+/* Rainbow stripes decoration */
+.rainbow-stripes {
+  background: linear-gradient(
+    to right,
+    #4dabf7 0%,
+    #4dabf7 14.28%,
+    #7950f2 14.28%,
+    #7950f2 28.56%,
+    #ff6b6b 28.56%,
+    #ff6b6b 42.84%,
+    #ffa94d 42.84%,
+    #ffa94d 57.12%,
+    #ffd43b 57.12%,
+    #ffd43b 71.4%,
+    #69db7c 71.4%,
+    #69db7c 85.68%,
+    #da77f2 85.68%,
+    #da77f2 100%
+  );
+}
