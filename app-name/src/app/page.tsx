@@ -136,7 +136,7 @@ export default function HomePage() {
                   <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
                   <Image
                     src="/images/foto1.jpg"
-                    alt="Mariany Rodríguez - Psicóloga Clínica"
+                    alt="Psicóloga en Caracas - Mariany Rodríguez, especialista en ansiedad, depresión y TDAH"
                     width={600}
                     height={750}
                     className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]"
@@ -227,7 +227,7 @@ export default function HomePage() {
               <AnimatedSection className="order-2 lg:order-1">
                 <Image
                   src="/images/foto2.jpg"
-                  alt="Mariany Rodriguez"
+                  alt="Mariany Rodríguez - Psicóloga en Caracas especializada en terapia cognitivo-conductual"
                   width={600}
                   height={600}
                   className="rounded-3xl shadow-xl w-full object-cover aspect-square"
@@ -295,7 +295,7 @@ export default function HomePage() {
                 >
                   <Image
                     src="/images/mary.png"
-                    alt="Deja tu reseña"
+                    alt="Deja tu reseña para psicóloga en Caracas - Mariany Rodríguez"
                     width={400}
                     height={400}
                     className="w-full max-w-md mx-auto transition-transform group-hover:scale-105"
