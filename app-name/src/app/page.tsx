@@ -89,16 +89,16 @@ export default function HomePage() {
                 <div className="space-y-8">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                     <Sparkles className="w-4 h-4" />
-                    <span>Psicologia Clinica Especializada</span>
+                    <span>Psicología Clínica Especializada</span>
                   </div>
                   
                   <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight text-balance">
-                    Tu camino hacia el bienestar emocional comienza aqui
+                    Tu camino hacia el bienestar emocional comienza aquí
                   </h1>
                   
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-xl text-pretty">
-                    Te acompano en tu proceso de transformacion personal con terapia especializada, 
-                    en un espacio seguro donde podras trabajar hacia una vida mas plena y satisfactoria.
+                    Te acompaño en tu proceso de transformación personal con terapia especializada, 
+                    en un espacio seguro donde podrás trabajar hacia una vida más plena y satisfactoria.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -136,7 +136,7 @@ export default function HomePage() {
                   <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
                   <Image
                     src="/images/foto1.jpg"
-                    alt="Mariany Rodriguez - Psicologa Clinica"
+                    alt="Mariany Rodríguez - Psicóloga Clínica"
                     width={600}
                     height={750}
                     className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]"
@@ -168,11 +168,11 @@ export default function HomePage() {
             <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-medium text-sm uppercase tracking-wider">Servicios</span>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-6 text-balance">
-                Atencion especializada para tu bienestar
+                Atención especializada para tu bienestar
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Ofrezco diferentes modalidades de terapia adaptadas a tus necesidades, 
-                con un enfoque cognitivo-conductual que te ayudara a alcanzar tus metas personales.
+                con un enfoque cognitivo-conductual que te ayudará a alcanzar tus metas personales.
               </p>
             </AnimatedSection>
 
@@ -180,22 +180,22 @@ export default function HomePage() {
               <ServiceCard
                 icon={Brain}
                 title="Salud Mental"
-                description="Priorizamos tu bienestar mental para un mejor funcionamiento emocional y resolucion de problemas."
+                description="Priorizamos tu bienestar mental para un mejor funcionamiento emocional y resolución de problemas."
               />
               <ServiceCard
                 icon={Heart}
                 title="Terapia Individual"
-                description="Sesiones personalizadas para abordar tus necesidades especificas y alcanzar tus metas personales."
+                description="Sesiones personalizadas para abordar tus necesidades específicas y alcanzar tus metas personales."
               />
               <ServiceCard
                 icon={Users}
                 title="Terapia de Pareja"
-                description="Mejora tu relacion con sesiones disenadas para fortalecer la comunicacion y resolver conflictos."
+                description="Mejora tu relación con sesiones diseñadas para fortalecer la comunicación y resolver conflictos."
               />
               <ServiceCard
                 icon={MessageCircle}
                 title="Monitoreo Continuo"
-                description="Seguimiento semanal de tu progreso via WhatsApp, asegurando atencion constante a tu proceso."
+                description="Seguimiento semanal de tu progreso vía WhatsApp, asegurando atención constante a tu proceso."
               />
               <ServiceCard
                 icon={Clock}
@@ -205,7 +205,7 @@ export default function HomePage() {
               <ServiceCard
                 icon={Sparkles}
                 title="Talleres Grupales"
-                description="Participa en sesiones tematicas para desarrollar habilidades y compartir experiencias."
+                description="Participa en sesiones temáticas para desarrollar habilidades y compartir experiencias."
               />
             </div>
 
@@ -237,25 +237,25 @@ export default function HomePage() {
 
               <AnimatedSection className="order-1 lg:order-2 space-y-8">
                 <div>
-                  <span className="text-primary font-medium text-sm uppercase tracking-wider">Sobre Mi</span>
+                  <span className="text-primary font-medium text-sm uppercase tracking-wider">Sobre Mí</span>
                   <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mt-3 mb-6 text-balance">
-                    Hola, soy Mariany Rodriguez
+                    Hola, soy Mariany Rodríguez
                   </h2>
                 </div>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Soy psicologa clinica con mas de 5 anos de experiencia y fundadora de esta plataforma 
-                    dedicada a tu salud mental. Ofrezco atencion especializada a ninos, adolescentes y adultos, 
+                    Soy psicóloga clínica con más de 5 años de experiencia y fundadora de esta plataforma 
+                    dedicada a tu salud mental. Ofrezco atención especializada a niños, adolescentes y adultos, 
                     tanto de manera presencial como online.
                   </p>
                   <p>
-                    Mi especializacion abarca el tratamiento de TDAH, autismo, ansiedad, depresion y otros 
-                    trastornos del estado de animo. Ademas, brindo apoyo integral incluyendo asesoria a 
+                    Mi especialización abarca el tratamiento de TDAH, autismo, ansiedad, depresión y otros 
+                    trastornos del estado de ánimo. Además, brindo apoyo integral incluyendo asesoría a 
                     padres para el bienestar y desarrollo de sus hijos.
                   </p>
                   <p>
-                    Mi enfoque terapeutico se basa en la terapia cognitivo-conductual, una metodologia 
+                    Mi enfoque terapéutico se basa en la terapia cognitivo-conductual, una metodología 
                     eficaz centrada en modificar los pensamientos para cambiar la conducta.
                   </p>
                 </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
                   <ValueCard
                     icon={Heart}
                     title="Enfoque Personalizado"
-                    description="Cada terapia adaptada a tus necesidades unicas."
+                    description="Cada terapia adaptada a tus necesidades únicas."
                   />
                 </div>
 
@@ -295,7 +295,7 @@ export default function HomePage() {
                 >
                   <Image
                     src="/images/mary.png"
-                    alt="Deja tu resena"
+                    alt="Deja tu reseña"
                     width={400}
                     height={400}
                     className="w-full max-w-md mx-auto transition-transform group-hover:scale-105"
@@ -306,10 +306,10 @@ export default function HomePage() {
 
               <AnimatedSection className="text-center lg:text-left">
                 <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6 text-balance">
-                  Tu opinion es muy importante
+                  Tu opinión es muy importante
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                  Solo toma 1 minuto de tu tiempo, pero ayudara e inspirara a otras personas 
+                  Solo toma 1 minuto de tu tiempo, pero ayudará e inspirará a otras personas 
                   a iniciar su camino hacia el bienestar mental.
                 </p>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8">
@@ -318,7 +318,7 @@ export default function HomePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Dejar mi resena
+                    Dejar mi reseña
                     <Star className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
@@ -336,7 +336,7 @@ export default function HomePage() {
                 Lo que dicen mis pacientes
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Las experiencias de quienes han confiado en mi para su proceso de bienestar emocional.
+                Las experiencias de quienes han confiado en mí para su proceso de bienestar emocional.
               </p>
             </AnimatedSection>
 
@@ -365,7 +365,7 @@ export default function HomePage() {
                   </h2>
                   
                   <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
-                    Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia. Descubre tu diario emocional disenado para acompanarte en tu camino hacia el bienestar mental.
+                    Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear hábitos positivos cada día. Descubre tu diario emocional diseñado para acompañarte en tu camino hacia el bienestar mental.
                   </p>
                   
                   <div className="flex flex-wrap justify-center gap-3">
@@ -373,7 +373,7 @@ export default function HomePage() {
                       PDF Descargable
                     </span>
                     <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
-                      219 Paginas
+                      219 Páginas
                     </span>
                     <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
                       Entrega Inmediata
@@ -403,11 +403,11 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-6 text-balance">
-                Listo para comenzar tu viaje hacia el bienestar emocional?
+                ¿Listo para comenzar tu viaje hacia el bienestar emocional?
               </h2>
               <p className="text-primary-foreground/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-                No esperes mas para dar el primer paso hacia una vida mas plena y satisfactoria. 
-                Estoy aqui para acompanarte en tu proceso.
+                No esperes más para dar el primer paso hacia una vida más plena y satisfactoria. 
+                Estoy aquí para acompañarte en tu proceso.
               </p>
               <Button size="lg" onClick={handleAppointmentClick} className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-10 h-14 text-base">
                 Agenda tu cita ahora
