@@ -110,6 +110,10 @@
 /* Rainbow Button Styles */
 .rainbow-button {
   position: relative;
+  z-index: 10;
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   background: linear-gradient(
     90deg,
     #ff6b6b,
@@ -124,7 +128,7 @@
   background-size: 400% 100%;
   animation: rainbow-flow 3s ease infinite;
   border: none;
-  color: white;
+  color: white !important;
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 
