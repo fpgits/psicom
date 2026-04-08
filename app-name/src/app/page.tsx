@@ -495,80 +495,54 @@ export default function HomePage() {
 
         {/* Mindful Section */}
         <section className="py-20 lg:py-28 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <AnimatedSection delay={1}>
-              <div className="mindful-gradient rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+              <div className="mindful-gradient rounded-3xl p-10 lg:p-16 relative overflow-hidden">
                 {/* Rainbow stripes decoration */}
-                <div className="absolute top-0 right-0 w-4 h-full rainbow-stripes hidden lg:block" />
-                <div className="absolute bottom-0 right-0 w-full h-4 rainbow-stripes lg:hidden" />
+                <div className="absolute top-0 right-0 w-3 h-full rainbow-stripes" />
+                <div className="absolute top-0 left-0 w-3 h-full rainbow-stripes" />
                 
-                {/* Decorative brackets */}
-                <div className="absolute top-8 left-8 text-white/20 text-6xl font-light select-none hidden lg:block">{"{"}</div>
-                <div className="absolute bottom-8 left-8 text-white/20 text-6xl font-light select-none hidden lg:block">{"}"}</div>
-                
-                <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                  <div className="space-y-6 lg:pl-12">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold uppercase tracking-wider">
-                      <Sparkles className="w-4 h-4" />
-                      <span>Diario Emocional</span>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                        TRANSFORMA
-                      </h2>
-                      <p className="text-2xl md:text-3xl font-bold text-yellow-300">
-                        TU
-                      </p>
-                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight flex items-center gap-2">
-                        <span className="text-white/30">{"{"}</span>
-                        BIENESTAR
-                        <span className="text-white/30">{"}"}</span>
-                      </h2>
-                    </div>
-                    
-                    <p className="text-white/90 text-lg leading-relaxed max-w-md">
-                      Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia.
-                    </p>
-                    
-                    {/* Feature badges */}
-                    <div className="flex flex-wrap gap-3">
-                      <span className="px-4 py-2 rounded-full bg-[#ff6b6b] text-white text-sm font-semibold uppercase">
-                        PDF Descargable
-                      </span>
-                      <span className="px-4 py-2 rounded-full bg-gray-600 text-white text-sm font-semibold">
-                        219 Paginas
-                      </span>
-                      <span className="px-4 py-2 rounded-full bg-white text-gray-800 text-sm font-semibold uppercase">
-                        Entrega Inmediata
-                      </span>
-                    </div>
-                    
-                    {/* Rainbow Button */}
-                    <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                      <a
-                        href="https://mindful.tubienestarmental.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rainbow-button inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg font-bold"
-                      >
-                        <Sparkles className="w-5 h-5" />
-                        Mindful
-                        <ArrowRight className="w-5 h-5" />
-                      </a>
-                    </div>
+                <div className="text-center space-y-8 relative z-10">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4" />
+                    <span>Diario Emocional</span>
                   </div>
                   
-                  <div className="relative">
-                    {/* Rainbow frame around image */}
-                    <div className="absolute -inset-2 rounded-3xl rainbow-stripes opacity-80" />
-                    <div className="relative bg-white p-2 rounded-2xl">
-                      <img
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BF208F2F3-7706-4561-9C88-D99E307BC0BE%7D-vZedJBoPzMoh9x5e9aoWzPDy0HoFZA.png"
-                        alt="Mindful - Diario Emocional"
-                        className="rounded-xl w-full object-cover"
-                      />
-                    </div>
+                  <div className="space-y-2">
+                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                      Transforma tu Bienestar
+                    </h2>
+                  </div>
+                  
+                  <p className="text-white/90 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
+                    Una herramienta poderosa para cultivar mindfulness, gestionar emociones y crear habitos positivos cada dia. Descubre tu diario emocional diseñado para acompañarte en tu camino hacia el bienestar mental.
+                  </p>
+                  
+                  {/* Feature badges */}
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
+                      PDF Descargable
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
+                      219 Paginas
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-semibold">
+                      Entrega Inmediata
+                    </span>
+                  </div>
+                  
+                  {/* Rainbow Button */}
+                  <div className="pt-4">
+                    <a
+                      href="https://mindful.tubienestarmental.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rainbow-button inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-lg font-bold"
+                    >
+                      <Sparkles className="w-5 h-5" />
+                      Descubre Mindful
+                      <ArrowRight className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
               </div>
