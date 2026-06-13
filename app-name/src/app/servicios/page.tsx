@@ -257,7 +257,7 @@ export default function ServiciosPage() {
               <AnimatedSection>
                 <PricingCard
                   title="Paquete 3 Sesiones"
-                  price="75"
+                  price="80"
                   originalPrice="90"
                   icon={Users}
                   isPopular
@@ -276,7 +276,7 @@ export default function ServiciosPage() {
               <AnimatedSection>
                 <PricingCard
                   title="Plan Mensual"
-                  price="90"
+                  price="100"
                   originalPrice="120"
                   icon={Clock}
                   highlight="Mejor valor"
