@@ -111,12 +111,12 @@ export const LOCATION = {
   countryName: 'Venezuela',
   postalCode: '',
 
-  /** ⚠️ Coordenadas APROXIMADAS del centro de Los Chaguaramos.
-   *  Sustitúyelas por las exactas de tu consulta: en Google Maps, clic derecho
-   *  sobre el punto → el primer número es la latitud, el segundo la longitud.
-   *  Cuanto más precisas, mejor posicionas en el mapa local. */
-  latitude: 10.4886,
-  longitude: -66.8889,
+  /** Coordenadas tomadas de la ficha verificada de Google Business Profile
+   *  (place_id ChIJ0WGllZBZKowRsHZJZMOXEwU). Coinciden con el punto que Google
+   *  ya asocia a la consulta, que es justo lo que conviene: si el marcado y la
+   *  ficha señalan el mismo lugar, la señal de proximidad no se contradice. */
+  latitude: 10.4811925,
+  longitude: -66.8870092,
 
   /** Radio de servicio en metros para `areaServed`. */
   serviceRadiusMeters: 30000,
