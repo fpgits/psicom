@@ -8,15 +8,20 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
+import { whatsappUrl } from '@/lib/links'
 
 interface LoadingModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
-const WHATSAPP_URL = 'https://wa.me/584245157059?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n'
-
+/**
+ * El número de WhatsApp estaba escrito a mano dentro de este archivo y en
+ * ningún otro sitio. Ahora sale de src/config/site.ts, igual que el resto del
+ * NAP, para que no pueda quedar desincronizado con el pie, el schema y la
+ * página de contacto.
+ */
 export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -30,8 +35,10 @@ export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
 
   useEffect(() => {
     if (!isLoading && isOpen) {
+      const target = whatsappUrl()
+      if (!target) return
       const redirectTimer = setTimeout(() => {
-        window.location.href = WHATSAPP_URL
+        window.location.href = target
       }, 800)
       return () => clearTimeout(redirectTimer)
     }
