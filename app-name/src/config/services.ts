@@ -460,10 +460,13 @@ export const SERVICES: Service[] = [
     slug: 'terapia-online-venezuela',
     navLabel: 'Terapia online',
     icon: 'monitor',
-    metaTitle: 'Terapia Psicológica Online en Venezuela | Psicóloga Colegiada',
+    metaTitle: 'Psicólogo en Venezuela: Terapia Online | Psicóloga Colegiada',
     metaDescription:
-      'Terapia psicológica online con psicóloga clínica venezolana colegiada. Sesiones por videollamada desde cualquier ciudad de Venezuela o desde el exterior.',
+      '¿Buscas un psicólogo en Venezuela? Soy psicóloga clínica venezolana colegiada y ofrezco terapia online por videollamada para todo el país y para venezolanos en el exterior.',
     keywords: [
+      'psicólogo en Venezuela',
+      'psicóloga en Venezuela',
+      'psicóloga venezolana',
       'terapia online Venezuela',
       'psicólogo online Venezuela',
       'psicóloga venezolana online',
@@ -476,6 +479,13 @@ export const SERVICES: Service[] = [
       `Sesiones de 60 minutos por videollamada con ${PERSON.name}, psicóloga clínica colegiada en Venezuela ` +
       `(F.P.V. ${PERSON.fpvNumber}). Misma metodología y misma duración que la consulta presencial, sin el traslado.`,
     sections: [
+      {
+        heading: 'Una psicóloga venezolana, estés donde estés',
+        paragraphs: [
+          'Si buscas un psicólogo en Venezuela y no vives en Caracas, la modalidad online te da la misma atención sin depender de la ciudad: atiendo por videollamada a pacientes de todo el país.',
+          'Y si eres venezolano fuera del país, trabajar con una psicóloga venezolana significa no tener que traducir tu contexto. La migración, la familia que quedó y la adaptación se entienden sin nota al pie.',
+        ],
+      },
       {
         heading: 'Para quién tiene más sentido',
         bullets: [

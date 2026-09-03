@@ -21,7 +21,7 @@ import { SERVICES } from '@/config/services'
  * ignora por completo.
  */
 
-const LAST_UPDATED = new Date('2026-08-04')
+const LAST_UPDATED = new Date('2026-09-03')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ['', '/servicios', '/sobre-mi', '/contacto']
