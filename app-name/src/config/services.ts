@@ -228,7 +228,7 @@ export const SERVICES: Service[] = [
           'Entre tres y cinco sesiones, según la edad y la complejidad del caso. Incluye la entrevista clínica, la aplicación de pruebas, la recogida de información de terceros cuando corresponde y una sesión final de devolución de resultados con el informe.',
       },
     ],
-    related: ['terapia-autismo-caracas', 'terapia-ansiedad-caracas', 'terapia-online-venezuela'],
+    related: ['terapia-autismo-caracas', 'psicologia-infantil-adolescente-caracas', 'terapia-ansiedad-caracas', 'terapia-online-venezuela'],
   },
 
   /* ───────────────────────────────── DEPRESIÓN ──────────────────────────── */
@@ -379,7 +379,98 @@ export const SERVICES: Service[] = [
           'Sí, y no es un complemento opcional. La orientación a padres, hermanos y cuidadores forma parte del proceso: comprender el perfil sensorial y comunicativo de la persona cambia la dinámica cotidiana mucho más de lo que puede lograr una sesión semanal por sí sola. Cuando aplica, también se trabaja con el colegio.',
       },
     ],
-    related: ['terapia-tdah-caracas', 'terapia-ansiedad-caracas', 'terapia-online-venezuela'],
+    related: ['terapia-tdah-caracas', 'psicologia-infantil-adolescente-caracas', 'terapia-ansiedad-caracas', 'terapia-online-venezuela'],
+  },
+
+  /* ─────────────────────── INFANTIL Y ADOLESCENTE ───────────────────────── */
+  {
+    slug: 'psicologia-infantil-adolescente-caracas',
+    navLabel: 'Niños y adolescentes',
+    icon: 'heart',
+    metaTitle: 'Psicología Infantil y de Adolescentes en Caracas | Terapia',
+    metaDescription:
+      'Psicólogo infantil y de adolescentes en Caracas, presencial y online. Terapia para niños y adolescentes con orientación a padres, desde un enfoque cognitivo-conductual.',
+    keywords: [
+      'psicólogo infantil Caracas',
+      'psicóloga infantil Caracas',
+      'psicólogo para adolescentes Caracas',
+      'terapia infantil Caracas',
+      'psicología infantil Venezuela',
+      'orientación a padres Caracas',
+    ],
+    h1: 'Psicología infantil y de adolescentes en Caracas',
+    serviceType: 'Atención psicológica a niños y adolescentes',
+    alternateName: 'Terapia infantil y de adolescentes',
+    lead:
+      `La infancia y la adolescencia tienen su propia forma de expresar el malestar: muchas veces no se dice con palabras, ` +
+      `sino a través de la conducta, el rendimiento escolar o el cuerpo. En consulta se trabaja con niños y adolescentes ` +
+      `y con sus familias, desde la terapia cognitivo-conductual adaptada a cada edad, en modalidad presencial en ${zona} y online.`,
+    sections: [
+      {
+        heading: 'Motivos de consulta frecuentes',
+        bullets: [
+          'Miedos, ansiedad de separación, preocupación excesiva o crisis de angustia.',
+          'Tristeza persistente, irritabilidad, pérdida de interés o cambios bruscos de ánimo.',
+          'Rabietas frecuentes, oposición, dificultades para respetar límites o control de impulsos.',
+          'Problemas de atención, organización y rendimiento escolar.',
+          'Dificultades sociales: hacer amigos, acoso escolar, aislamiento.',
+          'Alteraciones del sueño, de la alimentación o del control de esfínteres.',
+          'Cambios tras una situación familiar difícil: separación, duelo, mudanza o migración de un familiar.',
+        ],
+      },
+      {
+        heading: 'Señales de que conviene consultar',
+        paragraphs: [
+          'No todo cambio es motivo de alarma: parte de lo que preocupa a los padres forma parte del desarrollo normal. Conviene consultar cuando el malestar se sostiene en el tiempo, cuando aparece en más de un entorno —casa y colegio— o cuando interfiere con la vida cotidiana del niño o del adolescente y con la de la familia.',
+          'Una evaluación inicial sirve precisamente para eso: distinguir lo esperable de la edad de lo que necesita acompañamiento, sin dramatizar ni minimizar.',
+        ],
+      },
+      {
+        heading: 'El papel de los padres',
+        paragraphs: [
+          'En el trabajo con niños, los padres son parte del tratamiento, no espectadores. Buena parte del cambio ocurre en casa, así que el proceso incluye orientación a los padres sobre límites, rutinas, manejo de conductas y comunicación.',
+          'Cuando es pertinente y la familia lo autoriza, se coordina también con el colegio, porque el entorno escolar es donde muchas dificultades se hacen visibles y donde los avances se ponen a prueba.',
+        ],
+      },
+      {
+        heading: 'Cómo se trabaja según la edad',
+        bullets: [
+          'Con los más pequeños, el juego y las actividades son la vía de trabajo: es su forma natural de expresar y elaborar lo que les pasa.',
+          'Con niños en edad escolar se combinan actividades con estrategias concretas para emociones, conducta y estudio.',
+          'Con adolescentes el formato es más conversacional y colaborativo, con un objetivo que ellos mismos ayudan a definir para que el proceso les haga sentido.',
+          'En todos los casos, ritmo y objetivos se ajustan a la etapa del desarrollo, no al revés.',
+        ],
+      },
+      {
+        heading: 'Confidencialidad con adolescentes',
+        paragraphs: [
+          'El vínculo terapéutico con un adolescente necesita un espacio propio: lo que comparte en sesión se maneja con reserva, y a los padres se les devuelve el sentido general del proceso y las orientaciones, no cada detalle. La excepción son las situaciones de riesgo para su seguridad o la de terceros, que sí se comunican. Este encuadre se explica con claridad a la familia y al adolescente desde la primera sesión.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: '¿A partir de qué edad se atiende en consulta?',
+        answer:
+          'Se atiende a niños, adolescentes y adultos. En el caso de los más pequeños, el trabajo se apoya en el juego y en la orientación a los padres; con adolescentes el formato es más conversacional. En la primera entrevista, habitualmente con los padres, se define el encuadre más adecuado según la edad y el motivo de consulta.',
+      },
+      {
+        question: '¿Los padres entran a la sesión?',
+        answer:
+          'Depende de la edad y del motivo. Con niños pequeños los padres participan de forma habitual y reciben orientación específica. Con adolescentes se cuida un espacio propio para ellos, y a los padres se les acompaña en paralelo. El esquema concreto se acuerda al inicio del proceso.',
+      },
+      {
+        question: '¿Cómo sé si lo que le pasa a mi hijo necesita terapia o es normal de su edad?',
+        answer:
+          'Es una de las dudas más frecuentes y no siempre es evidente desde casa. La referencia práctica es la intensidad, la duración y la interferencia: cuando el malestar se sostiene en el tiempo, aparece en varios entornos y afecta la vida diaria, conviene una evaluación. Precisamente esa evaluación inicial sirve para distinguir lo esperable del desarrollo de lo que necesita acompañamiento.',
+      },
+      {
+        question: '¿Se puede hacer terapia infantil o de adolescentes online?',
+        answer:
+          'Con adolescentes la modalidad online funciona muy bien y suele resultarles cómoda. Con niños pequeños la valoración es caso a caso: a veces se combina el trabajo presencial del niño con sesiones de orientación a los padres por videollamada. Se define en el primer contacto según la edad y el motivo de consulta.',
+      },
+    ],
+    related: ['terapia-tdah-caracas', 'terapia-autismo-caracas', 'terapia-ansiedad-caracas'],
   },
 
   /* ────────────────────────────────── PAREJA ────────────────────────────── */

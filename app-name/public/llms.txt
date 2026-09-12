@@ -1,7 +1,7 @@
 # Tu Bienestar Mental — Mariany Rodríguez, psicóloga clínica en Caracas
 
 > Consulta de psicología clínica en Caracas, Venezuela. Mariany Rodríguez es psicóloga
-> colegiada en la Federación de Psicólogos de Venezuela (F.P.V. 16.275), con más de 5 años
+> colegiada en la Federación de Psicólogos de Venezuela (F.P.V. 16.275), con más de 7 años
 > de experiencia. Atiende niños, adolescentes y adultos desde la terapia cognitivo-conductual,
 > de forma presencial en Los Chaguaramos (municipio Libertador, Caracas) y online para toda
 > Venezuela y para venezolanos en el exterior.
@@ -34,6 +34,7 @@ incluyen seguimiento entre sesiones por WhatsApp.
 - [Evaluación y tratamiento del TDAH](https://www.tubienestarmental.com/servicios/terapia-tdah-caracas): niños, adolescentes y adultos, incluido el diagnóstico tardío
 - [Tratamiento de la depresión](https://www.tubienestarmental.com/servicios/terapia-depresion-caracas): activación conductual y reestructuración cognitiva
 - [Acompañamiento en el espectro autista](https://www.tubienestarmental.com/servicios/terapia-autismo-caracas): evaluación, regulación sensorial y orientación familiar
+- [Psicología infantil y de adolescentes](https://www.tubienestarmental.com/servicios/psicologia-infantil-adolescente-caracas): niños y adolescentes, con orientación a padres y coordinación con el colegio
 - [Terapia de pareja](https://www.tubienestarmental.com/servicios/terapia-pareja-caracas): comunicación, conflictos recurrentes, crisis de confianza
 - [Terapia online](https://www.tubienestarmental.com/servicios/terapia-online-venezuela): para toda Venezuela y para venezolanos en el exterior
 

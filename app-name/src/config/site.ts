@@ -51,7 +51,7 @@ export const PERSON = {
   givenName: 'Mariany',
   familyName: 'Rodríguez',
   jobTitle: 'Psicóloga Clínica',
-  yearsOfExperience: 5,
+  yearsOfExperience: 7,
 
   /** Número de colegiatura en la Federación de Psicólogos de Venezuela.
    *  Es la credencial que más pesa en una categoría YMYL. */

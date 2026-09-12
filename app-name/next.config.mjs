@@ -1,11 +1,36 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  /* No revela la versión de Next en la cabecera X-Powered-By. */
+  poweredByHeader: false,
+
+  /* Formatos modernos: AVIF/WebP pesan mucho menos que JP/PNG, así que las
+     fotos de la profesional cargan antes. El LCP y el peso de la página son
+     factores de Core Web Vitals, y las CWV son señal de ranking. */
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
+          /* Cabeceras de seguridad estándar. No cambian el contenido, pero son
+             buenas prácticas que las auditorías (y en parte los rastreadores)
+             valoran, y evitan sniffing de tipos MIME y fugas de referrer. */
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'X-DNS-Prefetch-Control', value: 'on' },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+          },
           {
             key: 'Content-Security-Policy',
             value: `
