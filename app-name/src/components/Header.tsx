@@ -106,6 +106,14 @@ export default function Header({ solid = false }: { solid?: boolean }) {
               </li>
               <li>
                 <Link
+                  href="/guias"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  Guías
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contacto"
                   className="text-muted-foreground hover:text-foreground transition-colors font-medium"
                 >
@@ -163,6 +171,9 @@ export default function Header({ solid = false }: { solid?: boolean }) {
                   </Link>
                   <Link href="/servicios" className="text-base font-medium text-foreground hover:text-primary transition-colors">
                     Precios y planes
+                  </Link>
+                  <Link href="/guias" className="text-base font-medium text-foreground hover:text-primary transition-colors">
+                    Guías
                   </Link>
                   <Link href="/contacto" className="text-base font-medium text-foreground hover:text-primary transition-colors">
                     Contacto

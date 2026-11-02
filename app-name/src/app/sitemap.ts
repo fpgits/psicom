@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/config/site'
 import { SERVICES } from '@/config/services'
+import { GUIDES } from '@/config/guides'
 
 /**
  * Sitemap.
@@ -21,10 +22,10 @@ import { SERVICES } from '@/config/services'
  * ignora por completo.
  */
 
-const LAST_UPDATED = new Date('2026-09-11')
+const LAST_UPDATED = new Date('2026-11-01')
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = ['', '/servicios', '/sobre-mi', '/contacto']
+  const staticPages = ['', '/servicios', '/sobre-mi', '/contacto', '/guias']
 
   return [
     ...staticPages.map((path) => ({
@@ -34,6 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...SERVICES.map((service) => ({
       url: `${SITE_URL}/servicios/${service.slug}`,
       lastModified: LAST_UPDATED,
+    })),
+    /* Cada guía declara su propia fecha de actualización real. */
+    ...GUIDES.map((guide) => ({
+      url: `${SITE_URL}/guias/${guide.slug}`,
+      lastModified: new Date(guide.updatedAt),
     })),
   ]
 }

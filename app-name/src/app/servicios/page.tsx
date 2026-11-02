@@ -77,7 +77,7 @@ const PRICING_FAQS: FaqItem[] = [
   {
     question: '¿Cómo agendo y cuándo se confirma la cita?',
     answer:
-      `Escribiendo por WhatsApp. Se responde en horario de consulta, ${HOURS_SUMMARY}, y en ese mismo contacto se ` +
+      `Escribiendo por WhatsApp. Se responde en horario de consulta, ${HOURS_SUMMARY}. En ese mismo contacto se ` +
       'acuerdan día, hora, modalidad y forma de pago.',
   },
 ]

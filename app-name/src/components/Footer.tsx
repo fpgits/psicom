@@ -144,6 +144,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/guias" className="hover:text-background transition-colors">
+                  Guías de psicología
+                </Link>
+              </li>
+              <li>
                 <Link href="/contacto" className="hover:text-background transition-colors">
                   Contacto y ubicación
                 </Link>

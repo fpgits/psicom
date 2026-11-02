@@ -204,7 +204,7 @@ export default function HomePage() {
                         {service.navLabel}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed text-sm flex-1">
-                        {service.lead.split('. ').slice(0, 2).join('. ')}.
+                        {service.lead.split('. ').slice(0, 2).join('. ').replace(/\.+$/, '')}.
                       </p>
                       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
                         Ver más

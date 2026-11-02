@@ -186,7 +186,9 @@ export const OPENING_HOURS = [
 ] as const
 
 /** Resumen del horario en una frase, para textos y para el FAQ. */
-export const HOURS_SUMMARY = 'lunes a viernes, de 9:30 a. m. a 5:00 p. m.'
+/* Sin punto final a propósito: casi siempre va al final de una frase y el
+   punto lo pone el texto que la usa. Antes salía "5:00 p. m.." duplicado. */
+export const HOURS_SUMMARY = 'lunes a viernes, de 9:30 a. m. a 5:00 p. m'
 
 /**
  * Planes. Estos valores alimentan a la vez la página de precios, el schema
