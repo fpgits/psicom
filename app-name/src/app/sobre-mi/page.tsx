@@ -121,6 +121,7 @@ export default function SobreMiPage() {
                     title={PRESENTATION_VIDEO.name}
                     durationLabel={PRESENTATION_VIDEO.durationLabel}
                     captions={PRESENTATION_VIDEO.captions || undefined}
+                    transcript={PRESENTATION_VIDEO.transcript}
                     alt={`${PERSON.name}, psicóloga clínica colegiada en Caracas, en su video de presentación`}
                     priority
                   />

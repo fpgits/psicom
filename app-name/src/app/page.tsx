@@ -250,6 +250,7 @@ export default function HomePage() {
                     title={PRESENTATION_VIDEO.name}
                     durationLabel={PRESENTATION_VIDEO.durationLabel}
                     captions={PRESENTATION_VIDEO.captions || undefined}
+                    transcript={PRESENTATION_VIDEO.transcript}
                     alt={`${PERSON.name}, psicóloga clínica en Caracas, en su video de presentación`}
                   />
                 </div>

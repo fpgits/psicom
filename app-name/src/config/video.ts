@@ -14,7 +14,16 @@ import { clean } from '@/lib/schema'
 export const PRESENTATION_VIDEO = {
   src: '/videos/presentacion-mariany.mp4',
   poster: '/images/presentacion-poster.jpg',
-  captions: '' as string,
+  captions: '/videos/presentacion-mariany.es.vtt' as string,
+  /** Transcripción completa. Generada con Whisper y corregida a mano en el
+   *  tramo 5-15 s (audio rápido). ⚠️ Que Mariany la confirme; si cambia algo,
+   *  actualizar también el .vtt. */
+  transcript:
+    'Bienvenidos a mi página web. Mi nombre es Mariany Rodríguez, soy psicóloga federada en Venezuela. ' +
+    'Tengo siete años de experiencia laboral. Me especializo en el área de ansiedad, depresión y trastornos ' +
+    'del estado de ánimo, así como también he cursado estudios en el área de TDAH y autismo. Atiendo bajo la ' +
+    'modalidad presencial y online. Si deseas agendar consulta conmigo, puedes ir al botón de «Precios y ' +
+    'planes» y ahí puedes encontrar toda la información.',
   name: `Presentación de ${PERSON.name}, psicóloga clínica en Caracas`,
   description:
     `${PERSON.name}, psicóloga clínica colegiada (F.P.V. ${PERSON.fpvNumber}), se presenta y explica cómo ` +
@@ -37,6 +46,7 @@ export function videoSchema() {
     uploadDate: PRESENTATION_VIDEO.uploadDate,
     duration: PRESENTATION_VIDEO.duration,
     inLanguage: 'es',
+    transcript: PRESENTATION_VIDEO.transcript,
     author: { '@id': SCHEMA_ID.person },
     publisher: { '@id': SCHEMA_ID.business },
   })

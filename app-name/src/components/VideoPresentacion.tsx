@@ -30,6 +30,7 @@ export default function VideoPresentacion({
   captions,
   priority = false,
   showLabel = false,
+  transcript,
 }: {
   src: string
   poster: string
@@ -39,6 +40,7 @@ export default function VideoPresentacion({
   captions?: string
   priority?: boolean
   showLabel?: boolean
+  transcript?: string
 }) {
   const [state, setState] = useState<'idle' | 'playing' | 'ended'>('idle')
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -53,6 +55,7 @@ export default function VideoPresentacion({
   }
 
   return (
+    <div>
     <div className="relative aspect-[9/16] w-full overflow-hidden rounded-3xl bg-secondary shadow-2xl">
       {state === 'idle' ? (
         <button
@@ -122,6 +125,19 @@ export default function VideoPresentacion({
           )}
         </>
       )}
+    </div>
+
+    {/* Transcripción visible: accesibilidad y texto indexable. El mismo texto
+        va en el schema VideoObject (`transcript`). */}
+    {transcript && (
+      <details className="group mt-4 rounded-2xl border border-border bg-card px-5 py-3 text-sm">
+        <summary className="cursor-pointer list-none font-medium text-foreground marker:hidden">
+          <span className="group-open:hidden">Leer transcripción</span>
+          <span className="hidden group-open:inline">Ocultar transcripción</span>
+        </summary>
+        <p className="mt-3 leading-relaxed text-muted-foreground text-pretty">{transcript}</p>
+      </details>
+    )}
     </div>
   )
 }
