@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { BadgeCheck, GraduationCap, Users, Target, ArrowRight } from 'lucide-react'
 
@@ -8,6 +7,9 @@ import Footer from '@/components/Footer'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import AppointmentButton from '@/components/AppointmentButton'
 import FaqSection from '@/components/FaqSection'
+import VideoPresentacion from '@/components/VideoPresentacion'
+import JsonLd from '@/components/JsonLd'
+import { PRESENTATION_VIDEO, videoSchema } from '@/config/video'
 
 import { SERVICES } from '@/config/services'
 import { PERSON, LOCATION, HOURS_SUMMARY } from '@/config/site'
@@ -81,6 +83,7 @@ export default function SobreMiPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header solid />
+      <JsonLd data={videoSchema()} />
 
       <main>
         <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-20 bg-secondary/30">
@@ -111,15 +114,17 @@ export default function SobreMiPage() {
               </div>
 
               <div className="lg:col-span-2">
-                <Image
-                  src="/images/foto2.jpg"
-                  alt={`Retrato de ${PERSON.name}, psicóloga clínica colegiada en Caracas`}
-                  width={520}
-                  height={520}
-                  className="rounded-3xl shadow-xl w-full object-cover aspect-square"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority
-                />
+                <div className="mx-auto w-full max-w-[300px] sm:max-w-[340px]">
+                  <VideoPresentacion
+                    src={PRESENTATION_VIDEO.src}
+                    poster={PRESENTATION_VIDEO.poster}
+                    title={PRESENTATION_VIDEO.name}
+                    durationLabel={PRESENTATION_VIDEO.durationLabel}
+                    captions={PRESENTATION_VIDEO.captions || undefined}
+                    alt={`${PERSON.name}, psicóloga clínica colegiada en Caracas, en su video de presentación`}
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>

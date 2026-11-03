@@ -14,6 +14,14 @@ const nextConfig = {
 
   async headers() {
     return [
+      /* El video y su portada no cambian a menudo: caché de una semana en el
+         navegador y la CDN. Si se reemplaza el archivo, se cambia el nombre. */
+      {
+        source: '/videos/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=604800, stale-while-revalidate=86400' },
+        ],
+      },
       {
         source: '/:path*',
         headers: [

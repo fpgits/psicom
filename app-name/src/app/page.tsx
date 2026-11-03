@@ -27,6 +27,9 @@ import Testimonials from '@/components/Testimonials'
 import { SERVICES } from '@/config/services'
 import { HOME_FAQS } from '@/config/faqs'
 import { PERSON, LOCATION, HOURS_SUMMARY, GOOGLE_BUSINESS } from '@/config/site'
+import { PRESENTATION_VIDEO, videoSchema } from '@/config/video'
+import VideoPresentacion from '@/components/VideoPresentacion'
+import JsonLd from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -45,6 +48,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      <JsonLd data={videoSchema()} />
 
       <main>
         {/* ───────────────────────────── HERO ───────────────────────────── */}
@@ -118,16 +122,19 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection className="relative">
-                <div className="relative">
+                {/* En móvil el video va después del titular y del CTA (orden
+                    del grid) y con ancho contenido, para que el formato vertical
+                    no empuje todo el contenido fuera de la pantalla. */}
+                <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
                   <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-                  <Image
-                    src="/images/foto1.jpg"
-                    alt={`${PERSON.name}, psicóloga clínica en Caracas especializada en ansiedad, depresión, TDAH y autismo`}
-                    width={600}
-                    height={750}
-                    className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]"
+                  <VideoPresentacion
+                    src={PRESENTATION_VIDEO.src}
+                    poster={PRESENTATION_VIDEO.poster}
+                    title={PRESENTATION_VIDEO.name}
+                    durationLabel={PRESENTATION_VIDEO.durationLabel}
+                    captions={PRESENTATION_VIDEO.captions || undefined}
+                    alt={`${PERSON.name}, psicóloga clínica en Caracas, en su video de presentación`}
                     priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
 
                   <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 border border-border">
