@@ -122,19 +122,16 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection className="relative">
-                {/* En móvil el video va después del titular y del CTA (orden
-                    del grid) y con ancho contenido, para que el formato vertical
-                    no empuje todo el contenido fuera de la pantalla. */}
-                <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
+                <div className="relative">
                   <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-                  <VideoPresentacion
-                    src={PRESENTATION_VIDEO.src}
-                    poster={PRESENTATION_VIDEO.poster}
-                    title={PRESENTATION_VIDEO.name}
-                    durationLabel={PRESENTATION_VIDEO.durationLabel}
-                    captions={PRESENTATION_VIDEO.captions || undefined}
-                    alt={`${PERSON.name}, psicóloga clínica en Caracas, en su video de presentación`}
+                  <Image
+                    src="/images/foto1.jpg"
+                    alt={`${PERSON.name}, psicóloga clínica en Caracas especializada en ansiedad, depresión, TDAH y autismo`}
+                    width={600}
+                    height={750}
+                    className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/5]"
                     priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
 
                   <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-xl p-5 border border-border">
@@ -242,15 +239,20 @@ export default function HomePage() {
         <section id="sobre-mi" className="py-20 lg:py-28 bg-secondary/50 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Video de presentación junto a "Hola, soy Mariany": el título
+                  invita a conocerla y el video lo cumple. Va fuera de la
+                  cabecera para no competir con el titular ni con el CTA. */}
               <AnimatedSection className="order-2 lg:order-1">
-                <Image
-                  src="/images/foto2.jpg"
-                  alt={`${PERSON.name} en consulta — psicóloga en Caracas con enfoque cognitivo-conductual`}
-                  width={600}
-                  height={600}
-                  className="rounded-3xl shadow-xl w-full object-cover aspect-square"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <div className="mx-auto w-full max-w-[300px] sm:max-w-[340px]">
+                  <VideoPresentacion
+                    src={PRESENTATION_VIDEO.src}
+                    poster={PRESENTATION_VIDEO.poster}
+                    title={PRESENTATION_VIDEO.name}
+                    durationLabel={PRESENTATION_VIDEO.durationLabel}
+                    captions={PRESENTATION_VIDEO.captions || undefined}
+                    alt={`${PERSON.name}, psicóloga clínica en Caracas, en su video de presentación`}
+                  />
+                </div>
               </AnimatedSection>
 
               <AnimatedSection className="order-1 lg:order-2 space-y-7">

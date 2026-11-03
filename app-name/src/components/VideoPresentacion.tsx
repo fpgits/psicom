@@ -29,6 +29,7 @@ export default function VideoPresentacion({
   durationLabel,
   captions,
   priority = false,
+  showLabel = false,
 }: {
   src: string
   poster: string
@@ -37,6 +38,7 @@ export default function VideoPresentacion({
   durationLabel: string
   captions?: string
   priority?: boolean
+  showLabel?: boolean
 }) {
   const [state, setState] = useState<'idle' | 'playing' | 'ended'>('idle')
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -67,14 +69,20 @@ export default function VideoPresentacion({
             sizes="(max-width: 640px) 80vw, 420px"
             className="object-cover"
           />
-          <span className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
           <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow-xl transition-transform duration-300 group-hover:scale-110">
             <Play className="ml-1 h-8 w-8 fill-primary text-primary" aria-hidden="true" />
           </span>
-          <span className="absolute bottom-6 left-0 right-0 px-4 text-center text-white drop-shadow">
-            <span className="block font-serif text-xl font-semibold">Conóceme</span>
-            <span className="block text-sm opacity-90">Video de {durationLabel}</span>
-          </span>
+          {/* La portada actual ya lleva el texto integrado; este rótulo solo
+              se muestra si se usa una portada sin texto. */}
+          {showLabel && (
+            <>
+              <span className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
+              <span className="absolute bottom-6 left-0 right-0 px-4 text-center text-white drop-shadow">
+                <span className="block font-serif text-xl font-semibold">Conóceme</span>
+                <span className="block text-sm opacity-90">Video de {durationLabel}</span>
+              </span>
+            </>
+          )}
         </button>
       ) : (
         <>
